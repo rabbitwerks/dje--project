@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app--shell">
 
   </div>
 </template>
@@ -13,5 +13,9 @@ export default {
 
 <style>
 @import './assets/css/flexbox-util.css';
+
+.app--shell {
+  
+}
 
 </style>
