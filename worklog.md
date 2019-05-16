@@ -8,3 +8,8 @@
 - Assesing project code / assets
 - planning new app structure
 - init project
+- app shell built
+
+### 5/16/19
+
+

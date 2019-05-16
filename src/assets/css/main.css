@@ -1,3 +1,8 @@
+
+:root {
+  --fontColor_Main: #eee;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +11,8 @@
 
 html {
   font-size: 20px;
+  height: 100vh;
+  font-family: sans-serif;
 }
+
+
