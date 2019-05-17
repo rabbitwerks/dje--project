@@ -1,9 +1,10 @@
 <template>
-  <div class="socials-wrapper--outer">
+  <div class="socials-wrapper--outer flex-1 flexbox">
     <social-item 
       v-for="item in socials"
       :key="item"
       :item="item"
+      class="flexbox-space-center"
     />
   </div>
 </template>
@@ -42,7 +43,6 @@ export default {
 
 <style>
 .socials-wrapper--outer {
-  background-color: rgb(167, 0, 0);
   width: 70%;
 }
 </style>
