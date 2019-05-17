@@ -48,8 +48,4 @@ export default {
   color: var(--fontColor_Main);
   font-size: 4rem;
 }
-.socials--outer {
-  background-color: #fff;
-  width: 70%;
-}
 </style>
