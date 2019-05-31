@@ -17,12 +17,12 @@ export default {
   data() {
     return {
       title: 'DJ ENCOUNTER',
-    }
+    };
   },
   components: {
     'socials-wrapper': SocialsWrapper,
-  }
-}
+  },
+};
 </script>
 
 <style scoped>

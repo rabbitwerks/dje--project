@@ -12,9 +12,9 @@ export default {
     item: {
       type: Object,
       required: true,
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -32,4 +32,3 @@ export default {
   border-bottom: 3px solid var(--fontColor_Main);
 }
 </style>
-

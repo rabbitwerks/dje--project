@@ -1,17 +1,18 @@
 <template>
-  <div class="mixes--outer">
-    <h1>Mixes</h1>
+  <div class="shows--outer">
+    <h1>Upcoming Shows</h1>
   </div>
 </template>
 
 <script>
 export default {
 
-}
+};
 </script>
 
 <style scoped>
-.mixes--outer {
+.shows--outer {
   height: 100%;
+  background-color: #090909;
 }
 </style>

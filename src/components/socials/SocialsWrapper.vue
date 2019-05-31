@@ -1,8 +1,8 @@
 <template>
   <div class="socials-wrapper--outer flex-1 flexbox">
-    <social-item 
+    <social-item
       v-for="item in socials"
-      :key="item"
+      :key="item.site"
       :item="item"
       class="flexbox-space-center"
     />
@@ -18,7 +18,7 @@ export default {
       socials: [
         {
           site: 'facebook',
-          url: 'link'
+          url: 'link',
         },
         {
           site: 'instagram',
@@ -32,13 +32,13 @@ export default {
           site: 'email',
           url: 'email',
         },
-      ]
-    }
+      ],
+    };
   },
   components: {
     'social-item': SocialItem,
   },
-}
+};
 </script>
 
 <style>

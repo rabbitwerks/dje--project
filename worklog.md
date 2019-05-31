@@ -1,6 +1,6 @@
 # DJ ENCOUNTER - REVAMP
 
-> worklog
+> ## Project Worklog
 
 ### 5/15/19
 
@@ -25,3 +25,12 @@
   - requiring svg icons
 
 - starting on mixes view init
+
+### 5/30/19
+
+- gathering mix hardcode resources
+- building MixesGroup cmp
+  - building MixItem cmp
+  - setting hardcoded state in vues for now
+    - will refactor to admin mix updater app
+  - looping thru with V-FOR

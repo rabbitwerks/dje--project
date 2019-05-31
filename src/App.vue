@@ -1,25 +1,25 @@
 <template>
   <div id="app" class="app--shell">
-    <landing />
-    <mixes />
-    <biography />
-    <shows />
+    <VIEW--Landing />
+    <VIEW--Mixes />
+    <VIEW--Biography />
+    <VIEW--Shows />
   </div>
 </template>
 
 <script>
-import Landing from './views/landing/Landing';
-import Mixes from './views/mixes/Mixes';
-import Biography from './views/biography/Biography';
+import Landing from './views/landing/Landing.vue';
+import VIEW__Mixes from './views/mixes/VIEW--Mixes.vue';
+import Biography from './views/biography/Biography.vue';
 import Shows from './views/shows/Shows';
 
 export default {
   components: {
-    'landing': Landing,
-    'mixes': Mixes,
-    'biography': Biography,
-    'shows': Shows,
-  }
+    'VIEW--Landing': Landing,
+    'VIEW--Mixes': VIEW__Mixes,
+    'VIEW--Biography': Biography,
+    'VIEW--Shows': Shows,
+  },
 };
 </script>
 
