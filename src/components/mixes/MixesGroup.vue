@@ -28,6 +28,9 @@ export default {
   width: 80%;
   margin: 2rem 0;
 }
+.mix--item:first-of-type {
+  margin-top: 0;
+}
 .mix--embed {
   margin: 2rem 0;
 }

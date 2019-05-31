@@ -10,9 +10,12 @@
 </template>
 
 <script>
-import SocialItem from './SocialItem';
+import SocialItem from './SocialItem.vue';
 
 export default {
+  components: {
+    'social-item': SocialItem,
+  },
   data() {
     return {
       socials: [
@@ -34,9 +37,6 @@ export default {
         },
       ],
     };
-  },
-  components: {
-    'social-item': SocialItem,
   },
 };
 </script>

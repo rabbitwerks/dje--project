@@ -1,16 +1,23 @@
 <template>
-  <div class="mixes--shell flexbox flexdir-col">
-    <h1>Mixes!</h1>
+  <div class="view mixes--shell flexbox flexdir-col">
+    <ViewHeader :text="title"/>
     <MixesGroup />
   </div>
 </template>
 
 <script>
-import MixesGroup from '../../components/mixes/MixesGroup';
+import ViewHeader from '../../components/reusable/view-header/ViewHeader';
+import MixesGroup from '../../components/mixes/MixesGroup.vue';
 
 export default {
   components: {
+    ViewHeader,
     MixesGroup,
+  },
+  data() {
+    return {
+      title: 'Mixes',
+    };
   },
 };
 </script>

@@ -365,3 +365,28 @@
 .fxt-10 {
   transition: flex 1s ease-in-out;
 }
+
+.fbx {
+  display: flex;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.fbx.j-ctr {
+  justify-content: center;
+}
+.fbx.a-ctr {
+  align-items: center;
+}
+
+.fbx.spc-btwn {
+  justify-content: space-between;
+}
+.fbx.spc-arnd {
+  justify-content: space-around;
+}
+.fbx.spc-even {
+  justify-content: space-evenly;
+}

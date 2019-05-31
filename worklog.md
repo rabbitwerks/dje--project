@@ -34,3 +34,16 @@
   - setting hardcoded state in vues for now
     - will refactor to admin mix updater app
   - looping thru with V-FOR
+- mixes loaded and displayed
+  - embed and descrip
+- view-header reusable cmp
+  -flexbox util shorthands
+- shorthand smaller class names for common properties added
+  - fbx - display: flexbox
+  - f1 - flex: 1
+  - j-ctr - justify-content: center
+  - a-ctr - align-items: center
+
+---
+
+### 5/31/19

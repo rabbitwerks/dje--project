@@ -8,17 +8,17 @@
 </template>
 
 <script>
-import Landing from './views/landing/Landing.vue';
+import VIEW__Landing from './views/landing/VIEW--Landing.vue';
 import VIEW__Mixes from './views/mixes/VIEW--Mixes.vue';
-import Biography from './views/biography/Biography.vue';
-import Shows from './views/shows/Shows';
+import VIEW__Biography from './views/biography/VIEW--Biography.vue';
+import VIEW__Shows from './views/shows/VIEW--Shows';
 
 export default {
   components: {
-    'VIEW--Landing': Landing,
+    'VIEW--Landing': VIEW__Landing,
     'VIEW--Mixes': VIEW__Mixes,
-    'VIEW--Biography': Biography,
-    'VIEW--Shows': Shows,
+    'VIEW--Biography': VIEW__Biography,
+    'VIEW--Shows': VIEW__Shows,
   },
 };
 </script>

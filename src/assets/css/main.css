@@ -16,4 +16,6 @@ html {
   color: var(--fontColor_Main);
 }
 
-
+.view {
+  padding-top: 1rem;
+}

@@ -1,26 +1,27 @@
 <template>
-  <div class="landing--outer flexbox flexdir-col space-center">
+  <div class="view landing--outer flexbox flexdir-col space-center">
+    <socials-wrapper class="flex-2" />
     <div class="landing--image flex-14">
 
     </div>
     <div class="landing--brand flex-5">
       <h1>{{ title }}</h1>
     </div>
-    <socials-wrapper class="flex-2" />
+
   </div>
 </template>
 
 <script>
-import SocialsWrapper from '@/components/socials/SocialsWrapper';
+import SocialsWrapper from '@/components/socials/SocialsWrapper.vue';
 
 export default {
+  components: {
+    'socials-wrapper': SocialsWrapper,
+  },
   data() {
     return {
       title: 'DJ ENCOUNTER',
     };
-  },
-  components: {
-    'socials-wrapper': SocialsWrapper,
   },
 };
 </script>
