@@ -1,5 +1,7 @@
 <template>
-  <div class="view biography--shell">
+  <div 
+    id="view--biography"
+    class="view biography--shell">
     <ViewHeader :text="title" />
   </div>
 </template>

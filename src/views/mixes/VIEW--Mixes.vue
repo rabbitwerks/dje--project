@@ -1,5 +1,7 @@
 <template>
-  <div class="view mixes--shell flexbox flexdir-col">
+  <div 
+    id="view--mixes"
+    class="view mixes--shell flexbox flexdir-col">
     <ViewHeader :text="title"/>
     <MixesGroup />
   </div>

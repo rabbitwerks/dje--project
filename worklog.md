@@ -47,3 +47,9 @@
 ---
 
 ### 5/31/19
+
+- navbar cmp
+  - navbar wrapper
+  - navbar item
+- adding mix title to mix item
+

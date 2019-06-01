@@ -1,22 +1,26 @@
 <template>
-  <div class="view landing--outer flexbox flexdir-col space-center">
-    <socials-wrapper class="flex-2" />
-    <div class="landing--image flex-14">
+  <div
+    id="view--landing" 
+    class="view landing--outer flexbox flexdir-col space-center">
+    <SocialsWrapper class="flex-2" />
+    <div class="landing--image flex-20">
 
     </div>
-    <div class="landing--brand flex-5">
+    <div class="landing--brand flex-8">
       <h1>{{ title }}</h1>
     </div>
-
+    <NavBarWrapper class="flex-3" />
   </div>
 </template>
 
 <script>
 import SocialsWrapper from '@/components/socials/SocialsWrapper.vue';
+import NavBarWrapper from '../../components/nav-bar/NavBarWrapper.vue';
 
 export default {
   components: {
-    'socials-wrapper': SocialsWrapper,
+    SocialsWrapper,
+    NavBarWrapper,
   },
   data() {
     return {

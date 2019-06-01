@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .socials-wrapper--outer {
   width: 70%;
 }
