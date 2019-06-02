@@ -53,3 +53,10 @@
   - navbar item
 - adding mix title to mix item
 
+---
+
+### 6/2/19
+
+- navbar float
+  - custom directive to toggle display passed landing view
+  - hover effect finished

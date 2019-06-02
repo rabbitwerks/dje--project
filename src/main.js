@@ -12,13 +12,10 @@ Vue.directive('toggle-nav-float', {
     const viewHeight = window.innerHeight;
     window.addEventListener('scroll', () => {
       const positionFromTop = window.scrollY;
-      const navbarOffset = viewHeight - 60;
-      if (positionFromTop > navbarOffset) {
+      if (positionFromTop > viewHeight) {
         el.style.opacity = 1;
-        el.style.minHeight = '3rem';
-      } else if (positionFromTop < navbarOffset) {
+      } else if (positionFromTop < viewHeight) {
         el.style.opacity = 0;
-        el.style.minHeight = '0rem';
       }
     });
   },
