@@ -34,7 +34,7 @@ export default {
         },
         {
           section: 'Shows',
-          href: '#view--mixes',
+          href: '#view--shows',
         },
       ]
     }

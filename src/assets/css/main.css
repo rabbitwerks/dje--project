@@ -1,6 +1,9 @@
 
 :root {
-  --fontColor_Main: #eee;
+  --font-color--main: #eee;
+  --view-color--one: #030303;
+  --view-color--two: #090909;
+  --navbar-float: #070707;
 }
 
 * {
@@ -13,9 +16,9 @@ html {
   font-size: 20px;
   height: 100vh;
   font-family: sans-serif;
-  color: var(--fontColor_Main);
+  color: var(--font-color--main);
 }
 
 .view {
-  padding-top: 1rem;
+  padding-top: 3rem;
 }

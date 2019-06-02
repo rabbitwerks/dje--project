@@ -1,5 +1,6 @@
 <template>
-  <div 
+  <div
+    ref="view--mixes"
     id="view--mixes"
     class="view mixes--shell flexbox flexdir-col">
     <ViewHeader :text="title"/>
@@ -26,6 +27,6 @@ export default {
 
 <style scoped>
 .mixes--shell {
-  background-color: #090909;
+  background-color: var(--view-color--one);
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="app--shell">
+    <NavBarFloat />
     <VIEW--Landing />
     <VIEW--Mixes />
     <VIEW--Biography />
@@ -8,6 +9,8 @@
 </template>
 
 <script>
+import NavBarFloat from './components/nav-bar/NavBarFloat.vue';
+
 import VIEW__Landing from './views/landing/VIEW--Landing.vue';
 import VIEW__Mixes from './views/mixes/VIEW--Mixes.vue';
 import VIEW__Biography from './views/biography/VIEW--Biography.vue';
@@ -15,6 +18,7 @@ import VIEW__Shows from './views/shows/VIEW--Shows';
 
 export default {
   components: {
+    NavBarFloat,
     'VIEW--Landing': VIEW__Landing,
     'VIEW--Mixes': VIEW__Mixes,
     'VIEW--Biography': VIEW__Biography,

@@ -31,6 +31,9 @@ export default {
 </script>
 
 <style scoped>
+#view--landing {
+  padding-top: .65rem;
+}
 .landing--outer {
   background-image: url('../../assets/img/space-bg.jpg');
   background-size: cover;
