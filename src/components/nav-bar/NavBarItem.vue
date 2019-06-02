@@ -1,6 +1,6 @@
 <template>
   <div class="navbar-item--outer fbx j-ctr a-ctr">
-    <a class="nabar-item--inner" :href="href">
+    <a class="navbar-item--inner" :href="href">
       {{ text }}
     </a>
   </div>
@@ -24,9 +24,17 @@ export default {
 
 <style scoped>
 
-a {
+a.navbar-item--inner {
   color: var(--fontColor_Main);
   text-decoration: none;
+  padding: .25rem 2rem;
+}
+
+a.navbar-item--inner:hover {
+  background-color: rgba(219, 219, 219);
+  color: var(--navbar-float);
+  transition: all 0.15s ease-in-out .05s;
+  border-radius: 3px
 }
 
 </style>
