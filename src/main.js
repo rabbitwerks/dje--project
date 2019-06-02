@@ -15,10 +15,8 @@ Vue.directive('toggle-nav-float', {
       const navbarOffset = viewHeight - 60;
       if (positionFromTop > navbarOffset) {
         el.style.opacity = 1;
-        el.style.minHeight = '3rem';
       } else if (positionFromTop < navbarOffset) {
         el.style.opacity = 0;
-        el.style.minHeight = '0rem';
       }
     });
   },

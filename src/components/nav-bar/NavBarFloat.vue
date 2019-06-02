@@ -20,7 +20,6 @@ export default {
 .navbar--float {
   position: fixed;
   width: 100%;
-  min-height: 0rem;
   height: 3rem;
   background-color: var(--navbar-float);
   opacity: 0;
