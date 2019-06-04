@@ -67,3 +67,8 @@
 
 ### 6/3/19
 
+- reworked landing graphic
+- mixes branch
+  - mix-item built
+  - mix-item--title built
+- design for mix components
