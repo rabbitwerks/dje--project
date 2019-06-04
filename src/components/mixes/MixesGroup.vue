@@ -1,17 +1,23 @@
 <template>
   <ul class="mixes--outer flexbox flexdir-col flex-align-center">
-    <li
+    <MixItem
       v-for="mix in allMixes"
       :key="mix.id"
-      class="mix--item flex-1">
-      <div class="mix--embed" v-html="mix.embed" />
-      <div class="mix--description" v-text="mix.description" />
-    </li>
+      :title="mix.title"
+      :embed="mix.embed"
+      :description="mix.description"
+    />
+
   </ul>
 </template>
 
 <script>
+import MixItem from './mix-item/MixItem.vue';
+
 export default {
+  components: {
+    MixItem,
+  },
   computed: {
     allMixes() {
       return this.$store.getters.allMixes;
@@ -24,14 +30,5 @@ export default {
 .mixes--outer {
   list-style: none;
 }
-.mix--item {
-  width: 80%;
-  margin: 2rem 0;
-}
-.mix--item:first-of-type {
-  margin-top: 0;
-}
-.mix--embed {
-  margin: 2rem 0;
-}
+
 </style>
