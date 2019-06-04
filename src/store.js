@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -5,6 +6,12 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    globals: {
+      viewport: {
+        width: 0,
+        height: 0,
+      },
+    },
     mixes: [
       {
         id: 0,
@@ -24,12 +31,18 @@ export default new Vuex.Store({
     ],
   },
   getters: {
+    viewportDimensions_GET: state => state.globals.viewport,
     allMixes: state => state.mixes,
   },
   mutations: {
-
+    calcViewportDimensions_MUTA({ globals }, payload) {
+      globals.viewport.width = payload.width;
+      globals.viewport.height = payload.height;
+    },
   },
   actions: {
-
+    calcViewportDimensions_ACTION({ commit }, payload) {
+      commit('calcViewportDimensions_MUTA', payload);
+    },
   },
 });

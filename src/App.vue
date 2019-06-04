@@ -24,6 +24,33 @@ export default {
     'VIEW--Biography': VIEW__Biography,
     'VIEW--Shows': VIEW__Shows,
   },
+  data() {
+    return {
+      viewport: {
+        width: 0,
+        height: 0,
+      }
+    }
+  },
+  created() {
+    const payload = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+    this.$store.dispatch('calcViewportDimensions_ACTION', payload);
+  },
+  mounted() {
+    window.addEventListener('resize', (e) => {
+      const payload = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+      console.log('resize: ', payload);
+      this.viewport.width = payload.width;
+      this.viewport.height = payload.height;
+      this.$store.dispatch('calcViewportDimensions_ACTION', payload);
+    });
+  }, 
 };
 </script>
 

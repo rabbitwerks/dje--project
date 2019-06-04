@@ -1,6 +1,7 @@
 <template>
-  <div 
-    v-toggle-nav-float
+  <div
+    v-toggle-nav-float="{ viewportDimensions }"
+    :key="viewportDimensions.height"
     class="navbar--float fbx j-ctr a-ctr">
     <NavBarWrapper />
   </div>
@@ -12,11 +13,17 @@ import NavBarWrapper from './NavBarWrapper.vue';
 export default {
   components: {
     NavBarWrapper,
-  }
+  },
+
+  computed: {
+    viewportDimensions() {
+      return this.$store.getters.viewportDimensions_GET;
+    }
+  },
 }
 </script>
 
-<style>
+<style scoped>
 .navbar--float {
   position: fixed;
   width: 100%;

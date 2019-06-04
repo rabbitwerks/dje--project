@@ -60,3 +60,10 @@
 - navbar float
   - custom directive to toggle display passed landing view
   - hover effect finished
+  - need to css var the hover bg color
+- debugging v-toggle-nav-float
+
+---
+
+### 6/3/19
+
