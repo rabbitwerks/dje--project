@@ -72,3 +72,14 @@
   - mix-item built
   - mix-item--title built
 - design for mix components
+
+---
+
+### 6/4/19
+
+- built out sub-components for mix-item
+  - title
+  - embed
+  - description
+- more mixes info cmp
+

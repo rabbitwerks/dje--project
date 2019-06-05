@@ -1,18 +1,21 @@
 <template>
-  <li class="mix--item flex-1">
+  <li class="mix--item--outer flex-1">
     <MixItem--Title :title="title" />
-
-    <div class="mix--embed" v-html="embed" />
-    <div class="mix--description" v-text="description" />
+    <MixItem--Embed :embed="embed" />
+    <MixItem--Description :description="description" />    
   </li>
 </template>
 
 <script>
 import MixItem__Title from './MixItem__Title.vue';
+import MixItem__Embed from './MixItem__Embed.vue';
+import MixItem__Description from './MixItem__Description.vue';
 
 export default {
   components: {
     'MixItem--Title': MixItem__Title,
+    'MixItem--Embed': MixItem__Embed,
+    'MixItem--Description': MixItem__Description,
   },
   props: {
     title: {
@@ -33,25 +36,9 @@ export default {
 </script>
 
 <style scoped>
-.mix--item {
-  width: 80%;
-  margin: 2rem 0;
+.mix--item--outer {
+  width: 90%;
+  margin: 2rem 0 3rem 0;
   padding: 0 2rem;
-}
-
-
-.mix--embed {
-  width: 90%;
-  margin: 2rem 0;
-  padding: 2rem;
-  border: 1px solid #192ea3;
-  border-radius: 3px;
-}
-.mix--description {
-  width: 90%;
-  margin-left: 10%;
-  padding: 2rem;
-  border: 1px solid #746ce6;
-  border-radius: 3px;
 }
 </style>

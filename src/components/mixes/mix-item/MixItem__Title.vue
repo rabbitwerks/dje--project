@@ -14,7 +14,7 @@ export default {
 .mix--title--inner {
   width: 100%;
   color: var(--font-color--main);
-  font-size: 1.75rem;
+  font-size: 2rem;
   padding: 1rem 0;
   text-align: center;
   border-bottom: 2px solid var(--border--dark);

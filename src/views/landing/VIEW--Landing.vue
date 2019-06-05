@@ -35,7 +35,7 @@ export default {
   padding-top: .65rem;
 }
 .landing--outer {
-  background-image: url('../../assets/img/space-bg.jpg');
+  background-image: url('../../assets/img/view-landing_space01-1_1920x1080.jpg');
   background-size: cover;
   height: 100%;
 }
