@@ -1,6 +1,8 @@
 <template>
   <div class="mix--title--outer fbx j-ctr">
-    <div class="mix--title--inner" v-text="title"/>
+    <div class="mix--title--inner">
+      {{ title }}
+    </div>
   </div>
 </template>
 
@@ -18,6 +20,5 @@ export default {
   padding: 1rem 0;
   text-align: center;
   border-bottom: 2px solid var(--border--dark);
-
 }
 </style>

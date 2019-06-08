@@ -45,7 +45,7 @@ export default {
 }
 .mixes-info--inner {
   width: 90%;
-  margin: 2rem;
+  margin: 0 2rem 2rem 2rem;
   padding: 2rem;
   font-size: 1.5rem;
   text-align: center;
