@@ -4,7 +4,7 @@
     class="view landing--outer flexbox flexdir-col space-center">
     <SocialsWrapper class="flex-2" />
     <div class="landing--image flex-20">
-
+      <LandingBrandLogo />
     </div>
     <div class="landing--brand flex-8">
       <h1>{{ title }}</h1>
@@ -16,11 +16,13 @@
 <script>
 import SocialsWrapper from '@/components/socials/SocialsWrapper.vue';
 import NavBarWrapper from '../../components/nav-bar/NavBarWrapper.vue';
+import LandingBrandLogo from '../../components/landing/LandingBrandLogo.vue';
 
 export default {
   components: {
     SocialsWrapper,
     NavBarWrapper,
+    LandingBrandLogo,
   },
   data() {
     return {
