@@ -44,6 +44,7 @@ export default {
 }
 .landing--brand {
   color: var(--fontColor_Main);
-  font-size: 4rem;
+  font-size: 5rem;
+  font-family: 'space_rangerregular', sans-serif;
 }
 </style>

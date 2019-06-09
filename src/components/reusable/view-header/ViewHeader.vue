@@ -18,10 +18,11 @@ export default {
 <style scoped>
 .header--outer {
   min-height: 5rem;
-  height: 20vh;
+  height: 15vh;
 }
 .header--text {
-  font-size: 500%;
-  font-family: sans-serif;
+  font-size: 750%;
+  font-family: 'space_rangerregular', sans-serif;
+  letter-spacing: 5px;
 }
 </style>
