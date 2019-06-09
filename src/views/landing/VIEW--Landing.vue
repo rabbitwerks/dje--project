@@ -1,11 +1,13 @@
 <template>
   <div
-    id="view--landing" 
+    id="view--landing"
     class="view landing--outer flexbox flexdir-col space-center">
     <SocialsWrapper class="flex-2" />
-    <div class="landing--image flex-20">
-      <LandingBrandLogo />
-    </div>
+    <transition name="fade">
+      <div class="landing--image flex-20" v-if="mounted">
+        <LandingBrandLogo/>
+      </div>
+    </transition>
     <div class="landing--brand flex-8">
       <h1>{{ title }}</h1>
     </div>
@@ -27,7 +29,11 @@ export default {
   data() {
     return {
       title: 'DJ ENCOUNTER',
+      mounted: false,
     };
+  },
+  mounted() {
+    this.mounted = !this.mounted;
   },
 };
 </script>
@@ -48,5 +54,11 @@ export default {
   color: var(--fontColor_Main);
   font-size: 5rem;
   font-family: 'space_rangerregular', sans-serif;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity 1s cubic-bezier(0.7, 0.5, 0.8, 1);
 }
 </style>
