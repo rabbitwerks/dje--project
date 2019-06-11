@@ -1,10 +1,10 @@
 <template>
-  <div class="mix--embed" v-html="embed" />
+  <div class="mix--embed" v-html="embeds.desktop" />
 </template>
 
 <script>
 export default {
-  props: ['embed'],
+  props: ['embeds'],
   
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <li class="mix--item--outer flex-1">
     <MixItem--Title :title="title" />
-    <MixItem--Embed :embed="embed" />
+    <MixItem--Embed :embeds="embeds" />
     <MixItem--Description :description="description" />    
   </li>
 </template>
@@ -22,8 +22,8 @@ export default {
       type: String,
       default: '',
     },
-    embed: {
-      type: String,
+    embeds: {
+      type: [Object, String],
       required: true,
       default: 'Not able to find mix',
     },

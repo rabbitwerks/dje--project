@@ -2,10 +2,10 @@
   <div class="mixes--outer fbx flexdir-col">
     <ul class="mixes--inner flexbox flexdir-col flex-align-center">
       <MixItem
-        v-for="mix in allMixes"
+        v-for="mix in allMixes.mixes"
         :key="mix.id"
         :title="mix.title"
-        :embed="mix.embed"
+        :embeds="mix.embeds"
         :description="mix.description"
       />
     </ul>
@@ -28,8 +28,11 @@ export default {
     }
   },
   computed: {
+    viewport() {
+      return this.$store.getters.viewportDimensions_GET;
+    },
     allMixes() {
-      return this.$store.getters.allMixes;
+      return this.$store.getters.mixesData_GET;
     },
   },
 };

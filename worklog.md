@@ -82,3 +82,20 @@
   - embed
   - description
 - more mixes info cmp
+
+---
+
+### 6/10/19
+
+- mixes updated
+  - store updated
+    - desktop embed
+    - mobile embed
+  - mixes adtl inof
+- biography layout
+  - need to componentize
+  - data refactored to store
+- updates on global styles
+- updates on reuseable components
+
+
