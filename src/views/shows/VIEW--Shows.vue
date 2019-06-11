@@ -1,7 +1,7 @@
 <template>
   <div 
     id="view--shows"
-    class="shows--shell">
+    class="shows--shell view">
     <ViewHeader :text="title" />
   </div>
 </template>

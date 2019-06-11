@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .mix--item--outer {
   width: 90%;
-  margin: 2rem 0 3rem 0;
+  margin-bottom: 5rem;
   padding: 0 2rem;
 }
 </style>

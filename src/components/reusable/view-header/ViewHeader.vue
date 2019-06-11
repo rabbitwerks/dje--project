@@ -19,6 +19,7 @@ export default {
 .header--outer {
   min-height: 5rem;
   height: 15vh;
+  margin-bottom: 2rem;
 }
 .header--text {
   font-size: 750%;

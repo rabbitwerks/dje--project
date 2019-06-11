@@ -36,11 +36,13 @@ export default {
 </script>
 
 <style scoped>
+.mixes--outer {
+  margin-bottom: 5rem;
+}
 .mixes--inner {
   list-style: none;
 }
 .mixes-info--outer {
-  margin-bottom: 5rem;
   padding: 2rem;
 }
 .mixes-info--inner {

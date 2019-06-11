@@ -3,15 +3,18 @@
     id="view--biography"
     class="view biography--shell">
     <ViewHeader :text="title" />
+    <BiographyGroup />
   </div>
 </template>
 
 <script>
 import ViewHeader from '@/components/reusable/view-header/ViewHeader.vue';
+import BiographyGroup from '@/components/biography/BiographyGroup.vue'
 
 export default {
   components: {
     ViewHeader,
+    BiographyGroup,
   },
   data() {
     return {
@@ -23,7 +26,6 @@ export default {
 
 <style scoped>
 .biography--shell {
-  background-color: #111111;
-  height: 100%;
+  background-color: var(--view-color--two);
 }
 </style>
