@@ -91,11 +91,22 @@
   - store updated
     - desktop embed
     - mobile embed
-  - mixes adtl inof
+  - mixes adtl info
 - biography layout
   - need to componentize
   - data refactored to store
 - updates on global styles
 - updates on reuseable components
 
+---
 
+### 6/11/19
+
+- componentizing biography feature
+- updateing bio
+  - dynamic currentContact link
+  - need to add input for bio edit section for contact source
+    - dropdown of all 4 social sources
+    - pick one as primary
+    -display selected contact in bio
+  

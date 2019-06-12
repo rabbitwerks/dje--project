@@ -11,6 +11,24 @@ export default new Vuex.Store({
         width: 0,
         height: 0,
       },
+      socials: [
+        {
+          name: 'soundcloud',
+          link: 'https://soundcloud.com/dj-encounter',
+        },
+        {
+          name: 'facebook',
+          link: 'https://www.facebook.com/pages/a/270869899628854',
+        },
+        {
+          name: 'instagram',
+          link: 'https://instagram.com/dj_encounter_mn',
+        },
+        {
+          name: 'email',
+          link: 'mailto:djencounter1200@gmail.com',
+        },
+      ],
     },
     mixesData: {
       mixes: [
@@ -35,7 +53,7 @@ export default new Vuex.Store({
         {
           id: 2,
           title: 'BLCK Mass (live) at The Exchange in Minneapolis, MN 10-21-18',
-          embed: {
+          embeds: {
             desktop: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/522448692&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
             mobile: '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/522448692&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
           },
@@ -45,14 +63,15 @@ export default new Vuex.Store({
       lastUpdated: '06/05/19',
     },
     biographyData: {
-      text: 'DJ Encounter, aka Brady Hill of Minneapolis, first started mixing records in the year 2000, after finding inspiration at a party put on by the legendary Midwest crew Drop Bass Network. The rave scene quickly left its mark on Hill; though techno music has always been his main passion, he listens to and plays house, drum and bass, dubstep, trance and more, and as such he lists genre-spanning DJs such as Frankie Bones, Adam X, Dieselboy, DJ Dara, and DJ ESP as influences. <br /><br /> After taking gigs for the first several years of his career, personal issues led Hill to decide to keep his DJ skills out of public view, but he never stopped listening, practicing, mixing, and playing, as well as integrating new technology into his sets. He could only keep it to himself for so long, though. In 2015, Hill got the itch to perform in front of others again; that’s exactly what he did and he hasn’t looked back since. <br /><br /> These days you can find DJ Encounter performing at various clubs and underground events around the Twin Cities, most notably with the Blend Session and Dance Church crews. He earned his place at two of his biggest gigs, as he won two different mix contests to play opening sets at Heartbreak Hotel 4 and a huge SIMshows event at Skyway Theater, respectively. For booking inquiries you can get in contact with him on...',
-      lastUpdated: '6/10/19',
+      text: 'DJ Encounter, aka Brady Hill of Minneapolis, first started mixing records in the year 2000, after finding inspiration at a party put on by the legendary Midwest crew Drop Bass Network. The rave scene quickly left its mark on Hill; though techno music has always been his main passion, he listens to and plays house, drum and bass, dubstep, trance and more, and as such he lists genre-spanning DJs such as Frankie Bones, Adam X, Dieselboy, DJ Dara, and DJ ESP as influences. <br /><br /> After taking gigs for the first several years of his career, personal issues led Hill to decide to keep his DJ skills out of public view, but he never stopped listening, practicing, mixing, and playing, as well as integrating new technology into his sets. He could only keep it to himself for so long, though. In 2015, Hill got the itch to perform in front of others again; that’s exactly what he did and he hasn’t looked back since. <br /><br /> These days you can find DJ Encounter performing at various clubs and underground events around the Twin Cities, most notably with the Blend Session and Dance Church crews. He earned his place at two of his biggest gigs, as he won two different mix contests to play opening sets at Heartbreak Hotel 4 and a huge SIMshows event at Skyway Theater, respectively. For booking inquiries you can get in contact with him via ',
+      lastUpdated: '06/10/19',
     },
   },
   getters: {
     viewportDimensions_GET: state => state.globals.viewport,
     mixesData_GET: state => state.mixesData,
     bioData_GET: state => state.biographyData,
+    contact_GET: state => state.globals.socials[1],
   },
   mutations: {
     calcViewportDimensions_MUTA({ globals }, payload) {

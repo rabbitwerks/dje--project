@@ -366,6 +366,13 @@
   transition: flex 1s ease-in-out;
 }
 
+/**
+
+SHORTHAND SYNTAX FOR FLEXBOX UTIL LIBRARY @rabbitwerks.js
+
+*/
+
+
 .fbx {
   display: flex;
 }

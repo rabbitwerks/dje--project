@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     id="view--biography"
     class="view biography--shell">
     <ViewHeader :text="title" />
@@ -9,7 +9,7 @@
 
 <script>
 import ViewHeader from '@/components/reusable/view-header/ViewHeader.vue';
-import BiographyGroup from '@/components/biography/BiographyGroup.vue'
+import BiographyGroup from '@/components/biography/BiographyGroup.vue';
 
 export default {
   components: {
