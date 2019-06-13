@@ -377,23 +377,52 @@ SHORTHAND SYNTAX FOR FLEXBOX UTIL LIBRARY @rabbitwerks.js
   display: flex;
 }
 
+.fd-r {
+  flex-direction: row;
+}
+.fd-rr {
+  flex-direction: row-reverse;
+}
+.fd-c {
+  flex-direction: column;
+}
+.fd-cr {
+  flex-direction: column-reverse;
+}
+
 .f1 {
   flex: 1;
 }
+.f2 {
+  flex: 2;
+}
+.f3 {
+  flex: 3;
+}
 
+.fbx.sp-ctr {
+  justify-content: center;
+  align-items: center;
+}
 .fbx.j-ctr {
   justify-content: center;
+}
+.fbx.j-fs {
+  justify-content: flex-start;
+}
+.fbx.j-fe {
+  justify-content: flex-end;
 }
 .fbx.a-ctr {
   align-items: center;
 }
 
-.fbx.spc-btwn {
+.fbx.spc-bt {
   justify-content: space-between;
 }
-.fbx.spc-arnd {
+.fbx.spc-ar {
   justify-content: space-around;
 }
-.fbx.spc-even {
+.fbx.spc-ev {
   justify-content: space-evenly;
 }

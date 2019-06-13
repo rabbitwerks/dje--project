@@ -1,16 +1,10 @@
 <template>
   <div
     id="view--landing"
-    class="view landing--outer flexbox flexdir-col space-center">
+    class="view landing--outer fbx fd-c sp-ctr">
     <SocialsWrapper class="flex-2" />
-    <transition name="fade">
-      <div class="landing--image flex-20" v-if="mounted">
-        <LandingBrandLogo/>
-      </div>
-    </transition>
-    <div class="landing--brand flex-8">
-      <h1>{{ title }}</h1>
-    </div>
+    <LandingImage class="flex-20" />
+    <LandingBrand class="flex-8" :title="title" />
     <NavBarWrapper class="flex-3" />
   </div>
 </template>
@@ -18,13 +12,16 @@
 <script>
 import SocialsWrapper from '@/components/socials/SocialsWrapper.vue';
 import NavBarWrapper from '@/components/nav-bar/NavBarWrapper.vue';
-import LandingBrandLogo from '@/components/landing/LandingBrandLogo.vue';
+import LandingImage from '@/components/landing/LandingImage.vue';
+import LandingBrand from '@/components/landing/LandingBrand.vue';
+
 
 export default {
   components: {
     SocialsWrapper,
     NavBarWrapper,
-    LandingBrandLogo,
+    LandingImage,
+    LandingBrand,
   },
   data() {
     return {
@@ -32,9 +29,7 @@ export default {
       mounted: false,
     };
   },
-  mounted() {
-    this.mounted = !this.mounted;
-  },
+
 };
 </script>
 
@@ -47,18 +42,5 @@ export default {
   background-size: cover;
   height: 100vh;
 }
-.landing--image {
-  height: 50%;
-}
-.landing--brand {
-  color: var(--fontColor_Main);
-  font-size: 5rem;
-  font-family: 'space_rangerregular', sans-serif;
-}
-.fade-enter {
-  opacity: 0;
-}
-.fade-enter-active {
-  transition: opacity 1s cubic-bezier(0.7, 0.5, 0.8, 1);
-}
+
 </style>
