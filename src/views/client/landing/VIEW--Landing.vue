@@ -17,8 +17,8 @@
 
 <script>
 import SocialsWrapper from '@/components/socials/SocialsWrapper.vue';
-import NavBarWrapper from '../../components/nav-bar/NavBarWrapper.vue';
-import LandingBrandLogo from '../../components/landing/LandingBrandLogo.vue';
+import NavBarWrapper from '@/components/nav-bar/NavBarWrapper.vue';
+import LandingBrandLogo from '@/components/landing/LandingBrandLogo.vue';
 
 export default {
   components: {
@@ -43,9 +43,9 @@ export default {
   padding-top: .65rem;
 }
 .landing--outer {
-  background-image: url('../../assets/img/view-landing_space01-1_1920x1080.jpg');
+  background-image: url('../../../assets/img/view-landing_space01-1_1920x1080.jpg');
   background-size: cover;
-  height: 100%;
+  height: 100vh;
 }
 .landing--image {
   height: 50%;

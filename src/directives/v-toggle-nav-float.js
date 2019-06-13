@@ -19,9 +19,11 @@ function toggleOpacity(el, vH) {
   if (!el) return;
   const pos = window.scrollY;
   if (pos > vH) {
+    el.style.display = 'flex';
     el.style.opacity = 1;
   } else if (pos < vH) {
     el.style.opacity = 0;
+    el.style.display = 'none';
   }
 }
 

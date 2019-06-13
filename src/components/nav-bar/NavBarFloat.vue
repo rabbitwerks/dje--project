@@ -26,6 +26,7 @@ export default {
 <style scoped>
 .navbar--float {
   position: fixed;
+  display: none;
   width: 100%;
   height: 3rem;
   background-color: var(--navbar-float);

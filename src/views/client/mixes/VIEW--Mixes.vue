@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import ViewHeader from '../../components/reusable/view-header/ViewHeader';
-import MixesGroup from '../../components/mixes/MixesGroup.vue';
+import ViewHeader from '@/components/reusable/view-header/ViewHeader';
+import MixesGroup from '@/components/mixes/MixesGroup.vue';
 
 export default {
   components: {

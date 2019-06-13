@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 .shows--shell {
-  height: 100%;
+  height: 100vh;
   background-color: #090909;
 }
 </style>
