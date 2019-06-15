@@ -5,6 +5,7 @@
     <VIEW--Mixes />
     <VIEW--Biography />
     <VIEW--Shows />
+    <SiteFooter />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import VIEW__Landing from './landing/VIEW--Landing.vue';
 import VIEW__Mixes from './mixes/VIEW--Mixes.vue';
 import VIEW__Biography from './biography/VIEW--Biography.vue';
 import VIEW__Shows from './shows/VIEW--Shows.vue';
+import SiteFooter from './footer/SiteFooter.vue';
 
 export default {
   components: {
@@ -21,7 +23,8 @@ export default {
     'VIEW--Landing': VIEW__Landing,
     'VIEW--Mixes': VIEW__Mixes,
     'VIEW--Biography': VIEW__Biography,
-    'VIEW--Shows': VIEW__Shows
+    'VIEW--Shows': VIEW__Shows,
+    SiteFooter,
   },
   created() {
     const payload = {

@@ -1,7 +1,7 @@
 <template>
-  <a :href="item.url" class="social-item--outer">
+  <a :href="item.link" class="social-item--outer">
     <span class="social-item--inner"
-      >{{ item.site }}
+      >{{ item.name }}
     </span>
   </a>
 </template>
@@ -20,15 +20,15 @@ export default {
 <style scoped>
 .social-item--outer {
   text-decoration: none;
-  color: var(--fontColor_Main);
+  color: var(--font-color--main);
 }
 .social-item--inner {
+  padding: 0 1rem .5rem 1rem;
+  border-bottom: 2px solid transparent;
   transition: border 0.2s;
-  border-bottom: 3px solid transparent;
-  padding-bottom: .5rem;
 }
 .social-item--inner:hover {
   padding-bottom: .5rem;
-  border-bottom: 3px solid var(--fontColor_Main);
+  border-bottom: 2px solid var(--font-color--main);
 }
 </style>

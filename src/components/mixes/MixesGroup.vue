@@ -46,12 +46,12 @@ export default {
   list-style: none;
 }
 .mixes-info--outer {
-  padding: 2rem;
+  padding-top: 2rem;
 }
 .mixes-info--inner {
   width: 90%;
-  margin: 0 2rem 2rem 2rem;
-  padding: 2rem;
+  margin: 0 2rem;
+  padding-top: 2rem;
   font-size: 1.5rem;
   text-align: center;
   border-top: 2px solid var(--border--dark);

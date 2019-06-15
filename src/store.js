@@ -69,6 +69,7 @@ export default new Vuex.Store({
   },
   getters: {
     viewportDimensions_GET: state => state.globals.viewport,
+    socials_GET: state => state.globals.socials,
     mixesData_GET: state => state.mixesData,
     bioData_GET: state => state.biographyData,
     contact_GET: state => state.globals.socials[1],

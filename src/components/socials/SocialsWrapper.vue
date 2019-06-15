@@ -2,7 +2,7 @@
   <div class="socials-wrapper--outer flex-1 flexbox">
     <social-item
       v-for="item in socials"
-      :key="item.site"
+      :key="item.name"
       :item="item"
       class="flexbox-space-center"
     />
@@ -16,28 +16,11 @@ export default {
   components: {
     'social-item': SocialItem,
   },
-  data() {
-    return {
-      socials: [
-        {
-          site: 'facebook',
-          url: 'link',
-        },
-        {
-          site: 'instagram',
-          url: 'link',
-        },
-        {
-          site: 'soundcloud',
-          url: 'link',
-        },
-        {
-          site: 'email',
-          url: 'email',
-        },
-      ],
-    };
-  },
+  computed: {
+    socials() {
+      return this.$store.getters.socials_GET;
+    }
+  }
 };
 </script>
 
