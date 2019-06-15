@@ -25,7 +25,7 @@ export default {
 <style scoped>
 
 a.navbar-item--inner {
-  color: var(--fontColor_Main);
+  color: var(--font-color--main);
   text-decoration: none;
   padding: .25rem 2rem;
 }
@@ -36,5 +36,6 @@ a.navbar-item--inner:hover {
   transition: all 0.15s ease-in-out .05s;
   border-radius: 3px
 }
+
 
 </style>

@@ -27,8 +27,8 @@ export default {
 .navbar--float {
   position: fixed;
   display: none;
-  width: 100%;
   height: 3rem;
+  width: 100vw;
   background-color: var(--navbar-float);
   opacity: 0;
   transition: opacity 0.2s;

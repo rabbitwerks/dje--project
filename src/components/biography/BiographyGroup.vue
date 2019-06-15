@@ -1,6 +1,13 @@
 <template>
-  <div class="bio-group--outer fbx j-ctr">
-    <div class="bio-group--inner fbx">
+  <div 
+    class="bio-group--outer fbx">
+    <div 
+      class="bio-group--inner fbx"
+      :class="viewport.width < 480 
+        ? ['fd-c', 'a-ctr']
+        : 'j-ctr'
+    "
+    >
       <BioImage />
       <BioText :text="bioData.text" :contact="contact_GET"/>
     </div>

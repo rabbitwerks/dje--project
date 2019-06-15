@@ -16,4 +16,9 @@ export default {
   font-size: 5rem;
   font-family: 'space_rangerregular', sans-serif;
 }
+@media screen and (max-width: 480px){
+.landing--brand {
+  font-size: 1.25rem;
+}
+}
 </style>

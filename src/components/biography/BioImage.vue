@@ -3,3 +3,9 @@
     <img src="../../assets/img/brady-profile-pic.jpg" alt="DJ Encounter - Brady Hill">
   </div>
 </template>
+
+<style>
+@media screen and (max-width: 480px){
+  
+}
+</style>

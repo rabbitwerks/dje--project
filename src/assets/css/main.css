@@ -28,7 +28,7 @@
 
 html {
   font-size: var(--font-size);
-  height: 100vh;
+  min-height: 100vh;
   font-family: 'Ubuntu', sans-serif;
   color: var(--font-color--main);
 }
@@ -41,3 +41,14 @@ html {
   padding-top: 3rem;
 }
 
+@media screen and (max-width: 480px) {
+  :root {
+    --global-width: 96%;
+    --global-margin-fix: 2%;
+    --font-size: 12px;
+  }
+
+  body {
+    overflow-x: hidden; 
+  }
+}

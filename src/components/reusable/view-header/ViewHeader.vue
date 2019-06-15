@@ -26,4 +26,10 @@ export default {
   font-family: 'space_rangerregular', sans-serif;
   letter-spacing: 5px;
 }
+
+@media screen and (max-width: 480px) {
+  .header--text {
+    font-size: 300%;
+  }
+}
 </style>
