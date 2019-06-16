@@ -8,7 +8,7 @@ import router from './router';
 
 import vToggleNavFloat from './directives/v-toggle-nav-float';
 
-import viewportDimensions from './mixins/viewport';
+import viewport from './mixins/viewport';
 
 Vue.config.productionTip = false;
 
@@ -16,6 +16,6 @@ new Vue({
   store,
   router,
   vToggleNavFloat,
-  viewportDimensions,
+  viewport,
   render: h => h(App),
 }).$mount('#app');
