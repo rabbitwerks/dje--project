@@ -28,7 +28,7 @@ function toggleOpacity(el, vH) {
 }
 
 export default Vue.directive('toggle-nav-float', {
-  inserted(el, { value: { viewportDimensions: { height } } }) {
+  inserted(el, { value: { viewport: { height } } }) {
     window.addEventListener('scroll', () => toggleOpacity(el, height));
   },
 });

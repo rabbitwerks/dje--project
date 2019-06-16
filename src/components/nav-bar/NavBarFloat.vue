@@ -1,7 +1,7 @@
 <template>
   <div
-    v-toggle-nav-float="{ viewportDimensions }"
-    :key="viewportDimensions.height"
+    v-toggle-nav-float="{ viewport }"
+    :key="viewport.height"
     class="navbar--float fbx j-ctr a-ctr">
     <NavBarWrapper />
   </div>
@@ -15,11 +15,6 @@ export default {
     NavBarWrapper,
   },
 
-  computed: {
-    viewportDimensions() {
-      return this.$store.getters.viewportDimensions_GET;
-    }
-  },
 }
 </script>
 

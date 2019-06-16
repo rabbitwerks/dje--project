@@ -28,7 +28,12 @@ export default {
   transition: border 0.2s;
 }
 .social-item--inner:hover {
-  padding-bottom: .5rem;
   border-bottom: 2px solid var(--font-color--main);
+}
+
+@media screen and (max-width: 480px) {
+.social-item--inner {
+  padding: 0 .25rem .5rem .25rem;
+}
 }
 </style>

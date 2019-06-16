@@ -31,6 +31,7 @@ html {
   min-height: 100vh;
   font-family: 'Ubuntu', sans-serif;
   color: var(--font-color--main);
+  overflow-x: hidden; 
 }
 
 .brand-font {
@@ -46,9 +47,5 @@ html {
     --global-width: 96%;
     --global-margin-fix: 2%;
     --font-size: 12px;
-  }
-
-  body {
-    overflow-x: hidden; 
   }
 }

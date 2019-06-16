@@ -37,5 +37,9 @@ a.navbar-item--inner:hover {
   border-radius: 3px
 }
 
-
+@media screen and (max-width: 480px) {
+  a.navbar-item--inner {
+    padding: .25rem;
+  }
+}
 </style>

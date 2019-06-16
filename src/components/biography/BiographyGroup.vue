@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="bio-group--outer fbx">
+    class="bio-group--outer fbx j-ctr">
     <div 
       class="bio-group--inner fbx"
       :class="viewport.width < 480 
@@ -24,9 +24,6 @@ export default {
     BioText,
   },
   computed: {
-    viewport() {
-      return this.$store.getters.viewportDimensions_GET;
-    },
     bioData() {
       return this.$store.getters.bioData_GET;
     },

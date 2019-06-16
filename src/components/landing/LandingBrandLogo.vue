@@ -2,7 +2,7 @@
 	<svg
 		version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 		xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-		width="1900px" height="60vh" viewBox="0 0 1900 1200" enable-background="new 0 0 1920 1200" xml:space="preserve">
+		:width="viewport.width" height="60vh" viewBox="0 0 1900 1200" enable-background="new 0 0 1920 1200" xml:space="preserve">
 		<g>
 			<g>
 				<path 
@@ -62,5 +62,14 @@
 			</g>
 		</g>
 	</svg>
+</template>
 
-</template
+<script>
+export default {
+	computed: {
+		viewport() {
+			return this.$store.getters.viewportDimensions_GET;
+		},
+	}
+}
+</script>

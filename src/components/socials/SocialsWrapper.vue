@@ -28,4 +28,10 @@ export default {
 .socials-wrapper--outer {
   width: 70%;
 }
+
+@media screen and (max-width: 480px){
+.socials-wrapper--outer {
+  width: 100%;
+}
+}
 </style>

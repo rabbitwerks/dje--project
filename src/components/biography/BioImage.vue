@@ -4,8 +4,13 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 @media screen and (max-width: 480px){
-  
+.bio--image {
+  margin-bottom: 2rem;
+}
+.bio--image img {
+  width: 80%;
+}
 }
 </style>
