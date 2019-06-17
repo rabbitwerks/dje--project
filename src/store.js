@@ -69,6 +69,20 @@ export default new Vuex.Store({
     admin: {
       isLoggedIn: false,
       activeController: 'MixesController',
+      controllerMenu: [
+        {
+          title: 'Mixes',
+          controller: 'MixesController',
+        },
+        {
+          title: 'Biography',
+          controller: 'BiographyController',
+        },
+        {
+          title: 'Socials',
+          controller: 'SocialsController',
+        },
+      ],
     },
   },
   getters: {

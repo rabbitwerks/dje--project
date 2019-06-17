@@ -3,24 +3,24 @@
     class="menu--panel"
     :class="viewport.width < 480
       ? ''
-      : 'f1'
-    "
+      : 'f1'"
   >
-    <div class="menu--item fbx a-ctr">
-      Mixes
-    </div>
-    <div class="menu--item fbx a-ctr">
-      Biography
-    </div>
-    <div class="menu--item fbx a-ctr">
-      Socials
+    <div
+      v-for="item in controllerMenu" :key="item.title"
+      @click="$store.dispatch('setActiveController_ACTION', item.controller)"
+      class="menu--item fbx a-ctr"
+      >{{ item.title }}
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  computed: {
+    controllerMenu() {
+      return this.$store.getters.adminState_GET.controllerMenu;
+    }
+  }
 }
 </script>
 
