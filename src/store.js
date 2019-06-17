@@ -66,23 +66,34 @@ export default new Vuex.Store({
       text: 'DJ Encounter, aka Brady Hill of Minneapolis, first started mixing records in the year 2000, after finding inspiration at a party put on by the legendary Midwest crew Drop Bass Network. The rave scene quickly left its mark on Hill; though techno music has always been his main passion, he listens to and plays house, drum and bass, dubstep, trance and more, and as such he lists genre-spanning DJs such as Frankie Bones, Adam X, Dieselboy, DJ Dara, and DJ ESP as influences. <br /><br /> After taking gigs for the first several years of his career, personal issues led Hill to decide to keep his DJ skills out of public view, but he never stopped listening, practicing, mixing, and playing, as well as integrating new technology into his sets. He could only keep it to himself for so long, though. In 2015, Hill got the itch to perform in front of others again; that’s exactly what he did and he hasn’t looked back since. <br /><br /> These days you can find DJ Encounter performing at various clubs and underground events around the Twin Cities, most notably with the Blend Session and Dance Church crews. He earned his place at two of his biggest gigs, as he won two different mix contests to play opening sets at Heartbreak Hotel 4 and a huge SIMshows event at Skyway Theater, respectively. For booking inquiries you can get in contact with him via ',
       lastUpdated: '06/10/19',
     },
+    admin: {
+      isLoggedIn: false,
+      activeController: 'MixesController',
+    },
   },
   getters: {
     viewportDimensions_GET: state => state.globals.viewport,
     socials_GET: state => state.globals.socials,
+    contact_GET: state => state.globals.socials[1],
     mixesData_GET: state => state.mixesData,
     bioData_GET: state => state.biographyData,
-    contact_GET: state => state.globals.socials[1],
+    adminState_GET: state => state.admin,
   },
   mutations: {
     calcViewportDimensions_MUTA({ globals }, payload) {
       globals.viewport.width = payload.width;
       globals.viewport.height = payload.height;
     },
+    setActiveController_MUTA({ admin }, payload) {
+      admin.activeController = payload;
+    },
   },
   actions: {
     calcViewportDimensions_ACTION({ commit }, payload) {
       commit('calcViewportDimensions_MUTA', payload);
+    },
+    setActiveController_ACTION({ commit }, payload) {
+      commit('setActiveController_MUTA', payload);
     },
   },
 });

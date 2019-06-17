@@ -1,7 +1,6 @@
 <template>
   <div 
     class="client--shell"
-    :style="{ 'max-width': width }"
   >
     <NavBarFloat />
     <VIEW--Landing />
@@ -29,31 +28,6 @@ export default {
     'VIEW--Shows': VIEW__Shows,
     SiteFooter,
   },
-  data() {
-    return {
-      width: 0,
-      height: 0,
-    }
-  },
-  created() {
-    const payload = {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-    console.log(payload)
-    this.width = payload.width;
-    this.height = payload.height;
-    this.$store.dispatch('calcViewportDimensions_ACTION', payload)
-  },
-  mounted() {
-    window.addEventListener('resize', () => {
-      const payload = {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-      this.$store.dispatch('calcViewportDimensions_ACTION', payload)
-    })
-  }
 }
 </script>
 
