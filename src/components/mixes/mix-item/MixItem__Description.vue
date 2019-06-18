@@ -15,7 +15,7 @@ export default {
 .mix--description {
   width: var(--global-width);
   padding: 1rem;
-  border: 1px solid #746ce6;
+  border: 1px solid #5148d3;
   border-radius: 3px;
 }
 .desktop {

@@ -29,6 +29,7 @@ export default new Vuex.Store({
           link: 'mailto:djencounter1200@gmail.com',
         },
       ],
+      contactSelect: 1,
     },
     mixesData: {
       mixes: [
@@ -89,7 +90,8 @@ export default new Vuex.Store({
   getters: {
     viewportDimensions_GET: state => state.globals.viewport,
     socials_GET: state => state.globals.socials,
-    contact_GET: state => state.globals.socials[1],
+    contactSelect_GET: state => state.contactSelect,
+    contactLink_GET: state => state.globals.socials[state.globals.contactSelect],
     mixesData_GET: state => state.mixesData,
     bioData_GET: state => state.biographyData,
     adminState_GET: state => state.admin,

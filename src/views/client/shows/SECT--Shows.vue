@@ -1,7 +1,7 @@
 <template>
   <section 
     id="view--shows"
-    class="shows--shell view">
+    class="shows--shell view fbx fd-c a-ctr">
     <ViewHeader :text="title" />
     <Tourbox />
   </section>
@@ -28,8 +28,5 @@ export default {
   padding-bottom: 5rem;
   background-color: 
   var(--view-color--one);
-}
-.songkick-title {
-  padding: 1rem 0;
 }
 </style>

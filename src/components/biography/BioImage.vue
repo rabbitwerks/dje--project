@@ -1,8 +1,19 @@
 <template>
   <div class="bio--image fbx j-ctr a-ctr">
-    <img src="../../assets/img/brady-profile-pic.jpg" alt="DJ Encounter - Brady Hill">
+    <img :src="bioImg" alt="altText">
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      bioImg: 'https://res.cloudinary.com/rabbitwerks-js/image/upload/q_auto:best/v1560820553/dj-encounter/brady-profile-pic.jpg',
+      altText: 'DJ Encounter - Brady Hill - Profile Picture',
+    }
+  }
+}
+</script>
 
 <style scoped>
 .bio--image {

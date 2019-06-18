@@ -7,7 +7,7 @@
       data-track-button="on"
       data-detect-style="true"
       data-font-color="#eee"
-      data-background-color="#111"
+      data-background-color="#030303"
       >Check out all of DJ Encounter's upcoming shows!
     </a>
   </div>
@@ -26,6 +26,15 @@ export default {
 <style scoped>
 .tourbox--outer {
   width: var(--global-width);
-  margin-left: var(--global-margin-fix);
+  padding: 2rem;
+  border: 1px solid #5148d3;
+}
+
+@media screen and (max-width: 480px) {
+  .tourbox--outer {
+    width: calc(var(--global-width) - 5%);
+    margin-top: 2rem;
+    padding: .25rem;
+  }
 }
 </style>

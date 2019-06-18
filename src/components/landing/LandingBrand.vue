@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .landing--brand {
-  color: var(--fontColor_Main);
+  color: var(--font-color--main);
   font-size: 5rem;
   font-family: 'space_rangerregular', sans-serif;
 }

@@ -110,3 +110,22 @@
     - pick one as primary
     -display selected contact in bio
   
+---
+
+### 6/14/19
+
+- main app design for mobile coded
+- global mixin for viewport comp properties
+- converted to router app
+  - client view
+  - admin view
+
+---
+
+### 6/17/19
+
+- mobile styles fine tuned
+  - need to do songkick
+- admin menu items and content panel changing
+- checking out cloudinary for hosting images
+- adjustments across app for styling and consistancy

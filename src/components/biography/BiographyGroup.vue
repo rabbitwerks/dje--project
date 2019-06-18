@@ -28,7 +28,7 @@ export default {
       return this.$store.getters.bioData_GET;
     },
     contact() {
-      return this.$store.getters.contact_GET;
+      return this.$store.getters.contactLink_GET;
     }
   }
 }
@@ -45,8 +45,12 @@ export default {
 }
 
 @media screen and (max-width: 480px) {
+  .bio-group--outer {
+    padding-top: 1rem;
+  }
   .bio-group--inner {
     width: calc(var(--global-width) - 5%);
+    padding: 1rem;
   }
 }
 </style>
