@@ -9,7 +9,7 @@
     "
     >
       <BioImage />
-      <BioText :text="bioData.text" :contact="contact_GET"/>
+      <BioText :text="bioData.text" :contact="contact"/>
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
     bioData() {
       return this.$store.getters.bioData_GET;
     },
-    contact_GET() {
+    contact() {
       return this.$store.getters.contact_GET;
     }
   }
