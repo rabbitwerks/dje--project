@@ -10,7 +10,7 @@
       />
     </ul>
     <div class="mixes-info--outer fbx j-ctr a-ctr">
-      <div class="mixes-info--inner" v-text="mixesInfo" />
+      <div class="mixes-info--inner" v-text="allMixes.info" />
     </div>
   </div>
 </template>
@@ -21,11 +21,6 @@ import MixItem from './mix-item/MixItem.vue';
 export default {
   components: {
     MixItem,
-  },
-  data() {
-    return {
-      mixesInfo: 'These are just a few of the best. My entire collection of mixes is available to stream on SoundCloud.'
-    }
   },
   computed: {
     viewport() {

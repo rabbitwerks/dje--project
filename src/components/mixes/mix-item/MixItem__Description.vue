@@ -1,5 +1,8 @@
 <template>
-  <div class="mix--description" v-text="description" />
+  <div 
+    :class="viewport.width < 480 ? 'mobile' : 'desktop'"
+    class="mix--description" v-text="description"
+  />
 </template>
 
 <script>
@@ -10,10 +13,18 @@ export default {
 
 <style scoped>
 .mix--description {
-  width: 90%;
-  margin-left: 10%;
-  padding: 2rem;
+  width: var(--global-width);
+  padding: 1rem;
   border: 1px solid #746ce6;
   border-radius: 3px;
+}
+.desktop {
+  margin-left: 10%;
+}
+.mobile {
+  margin-left: var(--global-margin-fix);
+  padding: 1rem;
+  font-size: 1.15rem;
+  text-align: center;
 }
 </style>

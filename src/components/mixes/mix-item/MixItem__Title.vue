@@ -21,4 +21,9 @@ export default {
   text-align: center;
   border-bottom: 2px solid var(--border--dark);
 }
+@media screen and (max-width: 480px) {
+  .mix--title--inner {
+    width: var(--global-width);
+  }
+}
 </style>

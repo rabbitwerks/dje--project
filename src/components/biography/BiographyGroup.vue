@@ -38,8 +38,15 @@ export default {
 .bio-group--inner {
   min-height: 50vh;
   width: var(--global-width);
-  background: var(--view-color--one);
   margin-bottom: 5rem;
   padding: 2rem;
+  border: 1px solid #192ea3;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 480px) {
+  .bio-group--inner {
+    width: calc(var(--global-width) - 5%);
+  }
 }
 </style>

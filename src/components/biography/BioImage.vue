@@ -9,11 +9,12 @@
   padding-right: 2rem;
 }
 @media screen and (max-width: 480px){
-.bio--image {
-  margin-bottom: 2rem;
-}
-.bio--image img {
-  width: 80%;
-}
+  .bio--image {
+    margin-bottom: 2rem;
+    padding-right: 0;
+  }
+  .bio--image img {
+    width: 100%;
+  }
 }
 </style>

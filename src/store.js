@@ -60,6 +60,7 @@ export default new Vuex.Store({
           description: 'My first time playing the BLCK Mass stage, plus my first time playing at The Exchange. I experimented with track selection for this in an attempt to reach beyond my typical style of playing Techno.',
         },
       ],
+      info: 'These are just a few of the best. My entire collection of mixes is available to stream on SoundCloud.',
       lastUpdated: '06/05/19',
     },
     biographyData: {

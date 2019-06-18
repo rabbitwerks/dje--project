@@ -28,8 +28,13 @@ export default {
 }
 
 @media screen and (max-width: 480px) {
+  .header--outer {
+    height: 10vh;
+    margin-bottom: 1rem;
+  }
   .header--text {
-    font-size: 300%;
+    font-size: 350%;
+    text-align: center;
   }
 }
 </style>
