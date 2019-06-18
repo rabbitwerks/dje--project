@@ -1,10 +1,10 @@
 <template>
-  <div
+  <section
     id="view--biography"
     class="view biography--shell">
     <ViewHeader :text="title" />
     <BiographyGroup />
-  </div>
+  </section>
 </template>
 
 <script>

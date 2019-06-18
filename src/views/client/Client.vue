@@ -3,29 +3,29 @@
     class="client--shell"
   >
     <NavBarFloat />
-    <VIEW--Landing />
-    <VIEW--Mixes />
-    <VIEW--Biography />
-    <VIEW--Shows />
+    <SECT--Landing />
+    <SECT--Mixes />
+    <SECT--Biography />
+    <SECT--Shows />
     <SiteFooter />
   </div>
 </template>
 
 <script>
 import NavBarFloat from '../../components/nav-bar/NavBarFloat.vue';
-import VIEW__Landing from './landing/VIEW--Landing.vue';
-import VIEW__Mixes from './mixes/VIEW--Mixes.vue';
-import VIEW__Biography from './biography/VIEW--Biography.vue';
-import VIEW__Shows from './shows/VIEW--Shows.vue';
+import SECT__Landing from './landing/SECT--Landing.vue';
+import SECT__Mixes from './mixes/SECT--Mixes.vue';
+import SECT__Biography from './biography/SECT--Biography.vue';
+import SECT__Shows from './shows/SECT--Shows.vue';
 import SiteFooter from './footer/SiteFooter.vue';
 
 export default {
   components: {
     NavBarFloat,
-    'VIEW--Landing': VIEW__Landing,
-    'VIEW--Mixes': VIEW__Mixes,
-    'VIEW--Biography': VIEW__Biography,
-    'VIEW--Shows': VIEW__Shows,
+    'SECT--Landing': SECT__Landing,
+    'SECT--Mixes': SECT__Mixes,
+    'SECT--Biography': SECT__Biography,
+    'SECT--Shows': SECT__Shows,
     SiteFooter,
   },
 }

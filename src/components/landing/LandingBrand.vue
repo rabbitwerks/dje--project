@@ -1,5 +1,5 @@
 <template>
-  <div class="landing--brand flex-8">
+  <div class="landing--brand">
     <h1>{{ title }}</h1>
   </div>
 </template>
@@ -17,8 +17,8 @@ export default {
   font-family: 'space_rangerregular', sans-serif;
 }
 @media screen and (max-width: 480px){
-.landing--brand {
-  font-size: 1.25rem;
-}
+  .landing--brand {
+    font-size: 2.35rem;
+  }
 }
 </style>

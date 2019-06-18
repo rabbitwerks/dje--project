@@ -1,12 +1,12 @@
 <template>
-  <div
+  <section
     id="view--landing"
     class="view landing--outer fbx fd-c sp-ctr">
     <SocialsWrapper class="flex-2" />
     <LandingImage class="flex-20" />
     <LandingBrand class="flex-8" :title="title" />
     <NavBarWrapper class="flex-3" />
-  </div>
+  </section>
 </template>
 
 <script>

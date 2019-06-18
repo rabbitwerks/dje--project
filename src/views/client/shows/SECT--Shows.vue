@@ -1,10 +1,10 @@
 <template>
-  <div 
+  <section 
     id="view--shows"
     class="shows--shell view">
     <ViewHeader :text="title" />
     <Tourbox />
-  </div>
+  </section>
 </template>
 <script>
 import ViewHeader from '@/components/reusable/view-header/ViewHeader.vue';
