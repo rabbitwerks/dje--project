@@ -36,11 +36,27 @@
 
 <script>
 export default {
-
+  props: {
+    mix: {
+      type: Object,
+      required: true,
+      default: 'No data found. please refresh to try again..',
+    },
+    beingEdited: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+.mix--group--outer {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #1b35c5;
+  border-radius: 3px;
+}
 </style>
 
