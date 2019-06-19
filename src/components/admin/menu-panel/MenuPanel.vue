@@ -1,21 +1,22 @@
 <template>
   <div 
     class="menu--panel"
-    :class="viewport.width < 480
-      ? ''
-      : 'f1'"
+    :class="viewport.width < 480 ? '' : 'f3'"
   >
-    <div
+    <MenuItem
       v-for="item in controllerMenu" :key="item.title"
-      @click="$store.dispatch('setActiveController_ACTION', item.controller)"
-      class="menu--item fbx a-ctr"
-      >{{ item.title }}
-    </div>
+      :item="item"
+    />
   </div>
 </template>
 
 <script>
+import MenuItem from './MenuItem.vue';
+
 export default {
+  components: {
+    MenuItem,
+  },
   computed: {
     controllerMenu() {
       return this.$store.getters.adminState_GET.controllerMenu;
@@ -26,17 +27,7 @@ export default {
 
 <style scoped>
 .menu--panel {
-  background-color: rgb(59, 151, 131);
+  background-color: var(--view-color--two);
 }
-.menu--item {
-  height: 5rem;
-  font-size: 1.5rem;
-  padding-left: 1.5rem;
-  background: rgb(27, 86, 104);
-  border-bottom: 1px solid #fff;
-  cursor: pointer;
-}
-.menu--item:hover {
-  background: rgb(44, 109, 129);
-}
+
 </style>

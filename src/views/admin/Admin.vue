@@ -2,27 +2,23 @@
   <div class="admin--shell">
     <h1>Admin Panel</h1>
     <div 
-    class="admin--outer fbx"
-    :class="
-      viewport.width < 480
-        ? 'fd-c'
-        : ''
-      "
+      class="admin--outer fbx"
+      :class="viewport.width < 480 ? 'fd-c' : ''"
     >
       <MenuPanel />
-      <ControlPanel />
+      <ControllerPanel />
     </div>
   </div>
 </template>
 
 <script>
 import MenuPanel from '@/components/admin/menu-panel/MenuPanel.vue';
-import ControlPanel from '@/components/admin/control-panel/ControlPanel.vue';
+import ControllerPanel from '@/components/admin/control-panel/ControllerPanel.vue';
 
 export default {
   components: {
     MenuPanel,
-    ControlPanel,
+    ControllerPanel,
   },
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="control--panel f3">
+  <div class="control--panel f10">
     <keep-alive>
       <component :is="adminState.activeController"></component>
     </keep-alive>
@@ -27,6 +27,7 @@ export default {
 
 <style scoped>
 .control--panel {
-  background-color: rgb(7, 56, 54);
+  background-color: #1d1d1d;
+  border-left: 2px solid rgb(255, 255, 255);
 }
 </style>
