@@ -19,7 +19,7 @@
           <input type="text" class="admin--input mix--title" :id="'title' + mix.id" :placeholder="mix.title">
         </div>
         <div class="form--group">
-          <label :for="'description' + mix.id">Mix Description</label>
+          <label :for="'description' + mix.id">Mix Descrip</label>
           <input type="text" class="admin--input mix--description" :id="'title' + mix.id" :placeholder="mix.description">
         </div>
       </div>
