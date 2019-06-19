@@ -93,6 +93,7 @@ export default new Vuex.Store({
     contactSelect_GET: state => state.contactSelect,
     contactLink_GET: state => state.globals.socials[state.globals.contactSelect],
     mixesData_GET: state => state.mixesData,
+    singleMix_VMOD: state => id => state.mixesData.mixes[id],
     bioData_GET: state => state.biographyData,
     adminState_GET: state => state.admin,
   },

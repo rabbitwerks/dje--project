@@ -25,13 +25,14 @@ export default {
 
 <style scoped>
 .admin--shell {
-  height: 100vh;
+  min-height: 100vh;
   padding: 2rem 5rem;
   background-color: var(--view-color--one);
 }
 .admin--outer {
-  background-color: var(--view-color--two);
   min-height: 90vh;
+  background-color: var(--view-color--two);
+  border: 2px solid #eee;
 }
 
 @media screen and (max-width: 480px) {

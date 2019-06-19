@@ -1,10 +1,5 @@
 <template>
-  <div class="mixes-controller--shell">
-    <ControllerHeader text="Mixes | Content Editor" beingEdited="false" />
-    <div class="mixes-controller--outer">
-      <div class="mc--inner">
-
-        <div class="mix--group--outer" v-for="mix in mixes" :key="mix.id">
+    <div class="mix--group--outer">
           <div class="mix--group--header flexbox-space-between">
             
             <h3 class="mix-number">Mix {{ mix.id + 1 }}</h3>
@@ -37,60 +32,15 @@
             </div>
           </div>
         </div>
-
-        <div class="add-mix--outer fbx flex-justify-end">
-          <button class="btn add-new-mix">Add New Mix</button>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
-import ControllerHeader from '@/components/reusable/controller-header/ControllerHeader.vue';
-
 export default {
-  components: {
-    ControllerHeader,
-  },
-  data() {
-    return {
-      beingEdited: true
-    }
-  },
-  computed: {
-    mixes() {
-      return this.$store.getters.mixesData_GET.mixes;
-    },
-    info() {
-      return this.$store.getters.mixesData_GET.info;
-    }
-  }
 
 }
 </script>
 
-<style scoped>
-.mixes-controller--outer {
-  padding: 1.5rem 2rem;
-}
+<style>
 
-.mix--group--outer {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  border: 1px solid #1b35c5;
-  border-radius: 3px;
-}
-.add-new-mix {
-  width: 20%;
-}
-
-@media screen and (max-width: 480px) {
-  .add-new-mix {
-    width: 100%;
-  }
-}
 </style>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="controller--header fbx a-ctr">
+  <div class="controller--header fbx a-ctr space-between">
     {{ text }}
   </div>
 </template>

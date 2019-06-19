@@ -27,7 +27,7 @@ export default {
   font-size: 1.5rem;
   padding-left: 1.5rem;
   background: rgb(10, 15, 26);
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid rgb(85, 85, 85);
   cursor: pointer;
 }
 .menu--item:hover {

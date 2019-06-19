@@ -28,6 +28,11 @@ export default {
 <style scoped>
 .control--panel {
   background-color: #1d1d1d;
-  border-left: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid #eee;
+}
+@media screen and (max-width: 480px) {
+  .control--panel {
+    border-left: 0;
+  }
 }
 </style>
