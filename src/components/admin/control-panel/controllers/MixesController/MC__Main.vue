@@ -2,14 +2,17 @@
   <div class="mix--group--outer">
     <div class="mix--group--header flexbox-space-between">
       
-      <h3 class="mix-number">Mix {{ mix.id + 1 }}</h3>
+      <h3 class="mix-number">Featured Mix #{{ mix.id + 1 }}</h3>
       <div class="mix-manage--outer fbx flexgap-2">
         <button v-if="beingEdited" class="btn">Save Edits</button>
         <button class="btn">Delete Mix</button>
       </div>
     </div>
     
-    <div class="mix--group--inner fbx flexgap-2">
+    <div
+      :class="viewport.width < 480 ? 'fd-c' : ''" 
+      class="mix--group--inner fbx flexgap-2"
+    >
       <div class="mix--group--info f1">
         <div class="form--group">
           <label :for="'title' + mix.id">Mix Title</label>
