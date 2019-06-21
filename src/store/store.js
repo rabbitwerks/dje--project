@@ -142,6 +142,9 @@ export default new Vuex.Store({
     deleteMix_MUTA(state, id) {
       state.mixesData.mixes.splice(id, 1);
     },
+    addNewMix_MUTA(state, payload) {
+      state.mixesData.mixes.push(payload);
+    },
   },
   actions: {
     // CLIENT
@@ -159,5 +162,8 @@ export default new Vuex.Store({
     deleteMix_ACTION({ commit }, id) {
       commit('deleteMix_MUTA', id);
     },
+    addNewMix_ACTION({ commit }, payload) {
+      commit('addNewMix_MUTA', payload);
+    }
   },
 });

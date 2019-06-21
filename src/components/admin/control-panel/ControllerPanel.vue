@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import MixesController from './controllers/MixesController.vue';
+import MixesController from './controllers/MixesController/MixesController.vue';
 import BiographyController from './controllers/BiographyController.vue';
 import SocialsController from './controllers/SocialsController.vue';
 

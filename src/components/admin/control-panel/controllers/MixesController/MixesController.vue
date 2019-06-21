@@ -2,12 +2,21 @@
   <div class="mixes-controller--shell">
     <ControllerHeader text="Mixes | Content Editor" beingEdited="false" />
     <div class="mixes-controller--outer">
+       
       <MC--Main v-for="mix in mixes" :key="mix.id"
         :mix="mix"
         :beingEdited="beingEdited"
       />
+      <MC--Add-New-Mix
+        v-if="addingNewMix"
+        @cancelAdd="addingNewMix = false"
+      />
       <div class="add-mix--outer fbx flex-justify-end">
-        <button class="btn add-new-mix">Add New Mix</button>
+        <button
+          @click="addingNewMix = true"
+          class="btn add-new-mix"
+          >Add New Mix
+        </button>
       </div>
 
     </div>
@@ -16,16 +25,20 @@
 
 <script>
 import ControllerHeader from '@/components/reusable/controller-header/ControllerHeader.vue';
-import MC__Main from './MixesController/MC__Main.vue';
+import MC__Main from './MC__Main.vue';
+import MC__AddNewMix from './mc-add-new-mix/MC__AddNewMix.vue';
+
 
 export default {
   components: {
     ControllerHeader,
     'MC--Main': MC__Main,
+    'MC--Add-New-Mix': MC__AddNewMix,
   },
   data() {
     return {
-      beingEdited: false
+      beingEdited: false,
+      addingNewMix: false,
     }
   },
   computed: {

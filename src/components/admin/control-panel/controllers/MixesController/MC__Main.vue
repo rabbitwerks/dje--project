@@ -53,7 +53,7 @@ import MC__Input__Title from './mc-inputs/MC__Input__Title.vue';
 import MC__Input__Embed__Desktop from './mc-inputs/MC__Input__Embed__Desktop.vue';
 import MC__Input__Embed__Mobile from './mc-inputs/MC__Input__Embed__Mobile.vue';
 import MC__Input__Description from './mc-inputs/MC__Input__Description.vue';
-import MC__MixManager from './MC__MixManager';
+import MC__MixManager from './mc-inputs/MC__MixManager.vue';
 
 export default {
   components: {
@@ -105,7 +105,8 @@ export default {
         id,
         edits: this.edits,
       };
-      this.$store.dispatch('saveMixEdits_ACTION', payload)
+      this.$store.dispatch('saveMixEdits_ACTION', payload);
+      this.beingEdited = false;
     },
     deleteMix(id) {
       this.$store.dispatch('deleteMix_ACTION', id)
