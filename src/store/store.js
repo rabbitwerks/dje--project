@@ -93,7 +93,6 @@ export default new Vuex.Store({
     contactSelect_GET: state => state.contactSelect,
     contactLink_GET: state => state.globals.socials[state.globals.contactSelect],
     mixesData_GET: state => state.mixesData,
-    singleMix_VMOD: state => id => state.mixesData.mixes[id],
     bioData_GET: state => state.biographyData,
     adminState_GET: state => state.admin,
   },
@@ -112,6 +111,9 @@ export default new Vuex.Store({
     },
     setActiveController_ACTION({ commit }, payload) {
       commit('setActiveController_MUTA', payload);
+    },
+    saveEdits_ACTION({ commit }, id) {
+      commit('saveEdits_MUTA', id);
     },
   },
 });

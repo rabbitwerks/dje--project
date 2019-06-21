@@ -1,55 +1,107 @@
 <template>
-  <div class="mix--group--outer">
-    <div class="mix--group--header flexbox-space-between">
-      
-      <h3 class="mix-number">Featured Mix #{{ mix.id + 1 }}</h3>
-      <div class="mix-manage--outer fbx flexgap-2">
-        <button v-if="beingEdited" class="btn">Save Edits</button>
-        <button class="btn">Delete Mix</button>
-      </div>
-    </div>
+  <div class="mix--group--outer"> 
+    <h3 class="mix-number">Featured Mix #{{ mix.id + 1 }}</h3>
     
     <div
       :class="viewport.width < 480 ? 'fd-c' : ''" 
       class="mix--group--inner fbx flexgap-2"
     >
       <div class="mix--group--info f1">
-        <div class="form--group">
-          <label :for="'title' + mix.id">Mix Title</label>
-          <input type="text" class="admin--input mix--title" :id="'title' + mix.id" :placeholder="mix.title">
-        </div>
-        <div class="form--group">
-          <label :for="'description' + mix.id">Mix Descrip</label>
-          <input type="text" class="admin--input mix--description" :id="'title' + mix.id" :placeholder="mix.description">
-        </div>
+
+        <MC--Input--Title 
+          :mix="mix"
+          :beingEdited="beingEdited"
+          @updateMixTitle_CE="updateMixTitle"
+        />
+
+        <MC--Input--Embed--Desktop
+          :mix="mix"
+          :beingEdited="beingEdited"
+          @updateEmbedDesktop_CE="updateEmbedDesktop"
+        />
+
+        <MC--Input--Embed--Mobile
+          :mix="mix"
+          :beingEdited="beingEdited"
+          @updateEmbedMobile_CE="updateEmbedMobile"
+        />
+
       </div>
-      <div class="mix--group--embeds f1">
-        <div class="form--group">
-          <label :for="'mix--desktop' + mix.id">Desktop Embed Link</label>
-          <input type="text" class="admin--input mix--embed--desktop" :id="'mix--desktop' + mix.id" :placeholder="mix.embeds.desktop">
-        </div>
-        <div class="form--group">
-          <label :for="'mix--mobile' + mix.id">Mobile Embed Link</label>
-          <input type="text" class="admin--input mix--embed--desktop" :id="'mix--mobile' + mix.id" :placeholder="mix.embeds.mobile">
-        </div>
+
+      <div class="mix--group--description f1 fbx fd-c flexbox-space-between">
+
+        <MC--Input--Description
+          :mix="mix"
+          :beingEdited="beingEdited"
+          @updateDescription_CE="updateMixDescription"
+        />
+
+        <MC--Mix-Manager
+          :mix="mix"
+          :beingEdited="beingEdited"
+          @saveEdits_CE="saveEdits"
+        />
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import MC__Input__Title from './mc-inputs/MC__Input__Title.vue';
+import MC__Input__Embed__Desktop from './mc-inputs/MC__Input__Embed__Desktop.vue';
+import MC__Input__Embed__Mobile from './mc-inputs/MC__Input__Embed__Mobile.vue';
+import MC__Input__Description from './mc-inputs/MC__Input__Description.vue';
+import MC__MixManager from './MC__MixManager';
+
 export default {
+  components: {
+    'MC--Input--Title': MC__Input__Title,
+    'MC--Input--Embed--Desktop': MC__Input__Embed__Desktop,
+    'MC--Input--Embed--Mobile': MC__Input__Embed__Mobile,
+    'MC--Input--Description': MC__Input__Description,
+    'MC--Mix-Manager': MC__MixManager,
+  },
+  data() {
+    return {
+      beingEdited: false,
+      edits: {
+        title: '',
+        embeds: {
+          desktop: '',
+          mobile: '',
+        },
+        description: '',
+      },
+    }
+  },
   props: {
     mix: {
       type: Object,
       required: true,
-      default: 'No data found. please refresh to try again..',
+      default: 'No data found. Please refresh to try again..',
     },
-    beingEdited: {
-      type: Boolean,
-      required: true,
-      default: false,
+  },
+  methods: {
+    updateMixTitle(value) {
+      this.beingEdited = true;
+      this.edits.title = value;
     },
+    updateEmbedDesktop(value) {
+      this.beingEdited = true;
+      this.edits.embeds.desktop = value;
+    },
+    updateEmbedMobile(value) {
+      this.beingEdited = true;
+      this.edits.embeds.mobile = value;
+    },
+    updateMixDescription(value) {
+      this.beingEdited = true;
+      this.edits.description = value;
+    },
+    saveEdits(id) {
+      this.$store.dispatch('saveMixEdits', id)
+    }
   }
 }
 </script>
