@@ -1,10 +1,10 @@
 <template>
   <div class="mix--group--outer"> 
-    <h3 class="mix-number">Featured Mix #{{ mix.id + 1 }}</h3>
+    <h3 class="mix-number">{{ mix.title }}</h3>
     
     <div
-      :class="viewport.width < 480 ? 'fd-c' : ''" 
-      class="mix--group--inner fbx flexgap-2"
+      :class="viewport.width < 480 ? 'fd-c' : 'flexgap-2'" 
+      class="mix--group--inner fbx"
     >
       <div class="mix--group--info f1">
 
@@ -40,6 +40,7 @@
           :mix="mix"
           :beingEdited="beingEdited"
           @saveEdits_CE="saveEdits"
+          @deleteMix_CE="deleteMix"
         />
 
       </div>
@@ -100,7 +101,14 @@ export default {
       this.edits.description = value;
     },
     saveEdits(id) {
-      this.$store.dispatch('saveMixEdits', id)
+      const payload = {
+        id,
+        edits: this.edits,
+      };
+      this.$store.dispatch('saveMixEdits_ACTION', payload)
+    },
+    deleteMix(id) {
+      this.$store.dispatch('deleteMix_ACTION', id)
     }
   }
 }

@@ -4,6 +4,10 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+function compareValues(currentValue, newValue) {
+
+}
+
 export default new Vuex.Store({
   state: {
     globals: {
@@ -97,23 +101,63 @@ export default new Vuex.Store({
     adminState_GET: state => state.admin,
   },
   mutations: {
+    // CLIENT
     calcViewportDimensions_MUTA({ globals }, payload) {
       globals.viewport.width = payload.width;
       globals.viewport.height = payload.height;
     },
+
+    // ADMIN
     setActiveController_MUTA({ admin }, payload) {
       admin.activeController = payload;
     },
+    saveMixEdits_MUTA(state, payload) {
+      const { id, edits } = payload;
+      const mixData = Object.entries(state.mixesData.mixes[id]);
+
+      const mixTitle = mixData[1][1];
+      const mixEmbeds = mixData[2][1];
+      const mixDescription = mixData[3][1];
+      if (mixTitle !== edits.title) {
+        if (edits.title) {
+          state.mixesData.mixes[id].title = edits.title;
+        }
+      }
+      if (mixEmbeds.desktop !== edits.embeds.desktop) {
+        if (edits.embeds.desktop) {
+          state.mixesData.mixes[id].embeds.desktop = edits.embeds.desktop;
+        }
+      }
+      if (mixEmbeds.mobile !== edits.embeds.mobile) {
+        if (edits.embeds.mobile) {
+          state.mixesData.mixes[id].embeds.mobile = edits.embeds.mobile;
+        }
+      }
+      if (mixDescription !== edits.description) {
+        if (edits.description) {
+          state.mixesData.mixes[id].description = edits.description;
+        }
+      }
+    },
+    deleteMix_MUTA(state, id) {
+      state.mixesData.mixes.splice(id, 1);
+    },
   },
   actions: {
+    // CLIENT
     calcViewportDimensions_ACTION({ commit }, payload) {
       commit('calcViewportDimensions_MUTA', payload);
     },
+
+    // ADMIN
     setActiveController_ACTION({ commit }, payload) {
       commit('setActiveController_MUTA', payload);
     },
-    saveEdits_ACTION({ commit }, id) {
-      commit('saveEdits_MUTA', id);
+    saveMixEdits_ACTION({ commit }, payload) {
+      commit('saveMixEdits_MUTA', payload);
+    },
+    deleteMix_ACTION({ commit }, id) {
+      commit('deleteMix_MUTA', id);
     },
   },
 });
