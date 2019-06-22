@@ -69,12 +69,12 @@ export default new Vuex.Store({
       lastUpdated: '06/05/19',
     },
     biographyData: {
-      text: 'DJ Encounter, aka Brady Hill of Minneapolis, first started mixing records in the year 2000, after finding inspiration at a party put on by the legendary Midwest crew Drop Bass Network. The rave scene quickly left its mark on Hill; though techno music has always been his main passion, he listens to and plays house, drum and bass, dubstep, trance and more, and as such he lists genre-spanning DJs such as Frankie Bones, Adam X, Dieselboy, DJ Dara, and DJ ESP as influences. <br /><br /> After taking gigs for the first several years of his career, personal issues led Hill to decide to keep his DJ skills out of public view, but he never stopped listening, practicing, mixing, and playing, as well as integrating new technology into his sets. He could only keep it to himself for so long, though. In 2015, Hill got the itch to perform in front of others again; that’s exactly what he did and he hasn’t looked back since. <br /><br /> These days you can find DJ Encounter performing at various clubs and underground events around the Twin Cities, most notably with the Blend Session and Dance Church crews. He earned his place at two of his biggest gigs, as he won two different mix contests to play opening sets at Heartbreak Hotel 4 and a huge SIMshows event at Skyway Theater, respectively. For booking inquiries you can get in contact with him via ',
+      text: 'DJ Encounter, aka Brady Hill of Minneapolis, first started mixing records in the year 2000, after finding inspiration at a party put on by the legendary Midwest crew Drop Bass Network. The rave scene quickly left its mark on Hill; though techno music has always been his main passion, he listens to and plays house, drum and bass, dubstep, trance and more, and as such he lists genre-spanning DJs such as Frankie Bones, Adam X, Dieselboy, DJ Dara, and DJ ESP as influences. \n\nAfter taking gigs for the first several years of his career, personal issues led Hill to decide to keep his DJ skills out of public view, but he never stopped listening, practicing, mixing, and playing, as well as integrating new technology into his sets. He could only keep it to himself for so long, though. In 2015, Hill got the itch to perform in front of others again; that’s exactly what he did and he hasn’t looked back since. \n\nThese days you can find DJ Encounter performing at various clubs and underground events around the Twin Cities, most notably with the Blend Session and Dance Church crews. He earned his place at two of his biggest gigs, as he won two different mix contests to play opening sets at Heartbreak Hotel 4 and a huge SIMshows event at Skyway Theater, respectively. For booking inquiries you can get in contact with him via ',
       lastUpdated: '06/10/19',
     },
     admin: {
       isLoggedIn: false,
-      activeController: 'MixesController',
+      activeController: 'BiographyController',
       controllerMenu: [
         {
           title: 'Mixes',
@@ -94,8 +94,8 @@ export default new Vuex.Store({
   getters: {
     viewportDimensions_GET: state => state.globals.viewport,
     socials_GET: state => state.globals.socials,
-    contactSelect_GET: state => state.contactSelect,
-    contactLink_GET: state => state.globals.socials[state.globals.contactSelect],
+    contactSelect_GET: state => state.globals.contactSelect,
+    contactData_GET: state => state.globals.socials[state.globals.contactSelect],
     mixesData_GET: state => state.mixesData,
     bioData_GET: state => state.biographyData,
     adminState_GET: state => state.admin,
@@ -111,6 +111,8 @@ export default new Vuex.Store({
     setActiveController_MUTA({ admin }, payload) {
       admin.activeController = payload;
     },
+
+    // MIXES
     saveMixEdits_MUTA(state, payload) {
       const { id, edits } = payload;
       const mixData = Object.entries(state.mixesData.mixes[id]);
@@ -145,6 +147,12 @@ export default new Vuex.Store({
     addNewMix_MUTA(state, payload) {
       state.mixesData.mixes.push(payload);
     },
+
+    // BIOGRAPHY
+    saveBiographyEdits_MUTA(state, edits) {
+      state.biographyData.text = edits;
+      state.biographyData.lastUpdated = Date.now().toLocaleString;
+    },
   },
   actions: {
     // CLIENT
@@ -156,6 +164,8 @@ export default new Vuex.Store({
     setActiveController_ACTION({ commit }, payload) {
       commit('setActiveController_MUTA', payload);
     },
+
+    // MIXES
     saveMixEdits_ACTION({ commit }, payload) {
       commit('saveMixEdits_MUTA', payload);
     },
@@ -164,6 +174,11 @@ export default new Vuex.Store({
     },
     addNewMix_ACTION({ commit }, payload) {
       commit('addNewMix_MUTA', payload);
-    }
+    },
+
+    // BIOGRAPHY
+    saveBiographyEdits_ACTION({ commit }, edits) {
+      commit('saveBiographyEdits_MUTA', edits);
+    },
   },
 });
