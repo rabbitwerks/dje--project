@@ -4,45 +4,23 @@
     <div class="biography-controller--outer">
       <BC--BioText 
         :beingEdited="beingEdited"
-        :text="beingEdited 
-          ? biographyEdits
-          : bioData.text"
+        :text="bioData.text"
         :selectedContact="selectedContact"
         @updateBio_CE="updateBio"
       />
-      <div class="bio--contact-select">
-        <h3 class="bio--label">Current Contact</h3>
-        <blockquote class="social-btns--text">
-          {{ bioData.bookingContact }} {{ socials[selectedContact].name }}
-        </blockquote>
-        <div class="fbx a-ctr">
-          <div v-for="(social, index) in socials" :key="social.name"
-            class="socials--select-group f1">
-            <div
-              @click="setContact(index)"
-              :class="selectedContact === index ? 'selected' : ''"
-              class="social--item fbx sp-ctr">
-                <span class="social--item--text">
-                  {{ social.name | capitalize }}
-                </span>
-            </div>
-          </div>
-        </div>
+      <BC--BioContact
+        :bioData="bioData"
+        :socials="socials"
+        :selectedContact="selectedContact"
+        @updateContact_CE="updateContact"
+      />
 
-      </div>
-
-      <div class="bio-manager fbx" v-if="beingEdited">
-        <button
-          @click="saveBioEdits"
-          class="btn save-edits"
-          >Save Biography Edits
-        </button>
-        <button
-          @click="cancelEdits"
-          class="btn cancel-edits"
-          >Cancel Edits
-        </button>
-      </div>
+      <BC--BioManager 
+        :beingEdited="beingEdited"
+        @saveBioEdits_CE="saveBioEdits"
+        @cancelEdits_CE="cancelEdits"
+      />
+      
     </div>
   </div>
 </template>
@@ -51,11 +29,15 @@
 import ControllerHeader from '../../../../reusable/controller-header/ControllerHeader.vue'
 
 import BC__BioText from './bc-inputs/BC__BioText.vue';
+import BC__BioContact from './bc-inputs/BC__BioContact.vue';
+import BC__BioManager from './BC__BioManager';
 
 export default {
   components: {
     ControllerHeader,
     'BC--BioText': BC__BioText,
+    'BC--BioContact': BC__BioContact,
+    'BC--BioManager': BC__BioManager,
   },
   data() {
     return {
@@ -76,8 +58,9 @@ export default {
     },
   },
   methods: {
-    setContact(value) {
+    updateContact(value) {
       this.selectedContact = value;
+      this.beingEdited = true;
     },
     updateBio(value) {
       this.biographyEdits = value;
@@ -85,7 +68,7 @@ export default {
     },
     saveBioEdits() {
       const payload = {
-        biographyEdits: this.biographyEdits,
+        biographyEdits: this.biographyEdits || this.bioData.text,
         selectedContact: this.selectedContact,
       }
       this.$store.dispatch('saveBiographyEdits_ACTION', payload);
@@ -104,31 +87,4 @@ export default {
   padding: 1.5rem 2rem;
 }
 
-
-
-.bio--contact-select {
-  padding: 1rem;
-  border: 1px solid var(--border--secondary);
-  border-radius: 3px;
-}
-
-.social--item {
-  height: 3rem;
-  margin-right: 1rem;
-  border: 1px solid #fff;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.selected {
-  background-color: rgb(12, 26, 100);
-}
-
-.bio-manager {
-  margin: 1rem 0;
-}
-
-.save-edits {
-  margin-right: 1rem;
-}
 </style>
