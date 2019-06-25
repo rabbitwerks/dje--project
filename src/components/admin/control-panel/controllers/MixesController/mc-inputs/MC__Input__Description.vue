@@ -13,7 +13,7 @@
 
       @blur="beingEdited 
         ? $event.target.value = newDescription
-        : $event.target.value = ''
+        : $event.target.value = null
       "
       class="admin--input mix--description"
       style="height: 5rem;"
@@ -29,6 +29,13 @@ export default {
     }
   },
   props: ['mix', 'beingEdited'],
+  watch: {
+    beingEdited(value) {
+      if (!value) {
+        this.newDescription = '';
+      }
+    }
+  },
   methods: {
     updateDescription(value) {
       this.$emit('updateDescription_CE', value);

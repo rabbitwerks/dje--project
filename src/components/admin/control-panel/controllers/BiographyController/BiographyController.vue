@@ -2,37 +2,45 @@
   <div class="biography-controller--shell">
     <ControllerHeader text="Biography | Content Editor" />
     <div class="biography-controller--outer">
-      <div class="bio--descriptionr">
-        <label for="bio--text"><h3>Biography Text</h3></label>
-        <textarea 
-          class="bio--group--text admin--input" 
-          id="bio--text"
-          :placeholder="bioData.text"
-          v-model="biographyEdits"
-        >
-        </textarea>
-      </div>
+      <BC--BioText 
+        :beingEdited="beingEdited"
+        :text="beingEdited 
+          ? biographyEdits
+          : bioData.text"
+        :selectedContact="selectedContact"
+        @updateBio_CE="updateBio"
+      />
       <div class="bio--contact-select">
-        <h3>Current Contact</h3>
+        <h3 class="bio--label">Current Contact</h3>
+        <blockquote class="social-btns--text">
+          {{ bioData.bookingContact }} {{ socials[selectedContact].name }}
+        </blockquote>
         <div class="fbx a-ctr">
-        <div v-for="(social, index) in socials" :key="social.name"
-          class="socials--radio-group f1">
-          <div
-            @click="setContact(index)"
-            class="social--label">
-            {{ social.name | capitalize }}
+          <div v-for="(social, index) in socials" :key="social.name"
+            class="socials--select-group f1">
+            <div
+              @click="setContact(index)"
+              :class="selectedContact === index ? 'selected' : ''"
+              class="social--item fbx sp-ctr">
+                <span class="social--item--text">
+                  {{ social.name | capitalize }}
+                </span>
+            </div>
           </div>
-
         </div>
 
-        </div>
       </div>
-      <div class="bio-manager fbx">
-        <button class="btn save-edits">
-          Save Biography Edits
+
+      <div class="bio-manager fbx" v-if="beingEdited">
+        <button
+          @click="saveBioEdits"
+          class="btn save-edits"
+          >Save Biography Edits
         </button>
-        <button class="btn cancel-edits">
-          Cancel Edits
+        <button
+          @click="cancelEdits"
+          class="btn cancel-edits"
+          >Cancel Edits
         </button>
       </div>
     </div>
@@ -41,9 +49,13 @@
 
 <script>
 import ControllerHeader from '../../../../reusable/controller-header/ControllerHeader.vue'
+
+import BC__BioText from './bc-inputs/BC__BioText.vue';
+
 export default {
   components: {
-    ControllerHeader
+    ControllerHeader,
+    'BC--BioText': BC__BioText,
   },
   data() {
     return {
@@ -65,7 +77,23 @@ export default {
   },
   methods: {
     setContact(value) {
-      console.log(value)
+      this.selectedContact = value;
+    },
+    updateBio(value) {
+      this.biographyEdits = value;
+      this.beingEdited = true;
+    },
+    saveBioEdits() {
+      const payload = {
+        biographyEdits: this.biographyEdits,
+        selectedContact: this.selectedContact,
+      }
+      this.$store.dispatch('saveBiographyEdits_ACTION', payload);
+      this.beingEdited = false;
+    },
+    cancelEdits() {
+      this.biographyEdits = this.bioData.text;
+      this.beingEdited = false;
     }
   }
 }
@@ -75,23 +103,29 @@ export default {
 .biography-controller--outer {
   padding: 1.5rem 2rem;
 }
-.bio--group--outer {
-  margin-bottom: 1.5rem;
+
+
+
+.bio--contact-select {
   padding: 1rem;
-  border: 1px solid #1b35c5;
+  border: 1px solid var(--border--secondary);
   border-radius: 3px;
 }
-label {
-  display: block;
-  margin-bottom: 1rem;
-}
-.bio--group--text {
-  width: 100%;
-  height: 15rem;
+
+.social--item {
+  height: 3rem;
+  margin-right: 1rem;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .selected {
-  background-color: #fff;
+  background-color: rgb(12, 26, 100);
+}
+
+.bio-manager {
+  margin: 1rem 0;
 }
 
 .save-edits {

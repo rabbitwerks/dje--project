@@ -17,7 +17,10 @@
   --view-color--one: #030303;
   --view-color--two: #111111;
   --navbar-float: #070707;
+
   --border--dark: rgb(41, 47, 73);
+  --border--primary: #1b35c5;
+  --border--secondary: #5148d3;
 }
 
 * {
