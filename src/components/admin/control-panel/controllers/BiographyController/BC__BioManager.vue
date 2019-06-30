@@ -1,5 +1,5 @@
 <template>
-  <div class="bio-manager fbx" v-if="beingEdited">
+  <div class="bio-manager fxbx" v-if="beingEdited">
     <button
       @click="saveBioEdits"
       class="btn save-edits"

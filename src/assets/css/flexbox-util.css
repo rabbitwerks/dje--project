@@ -193,10 +193,10 @@
 .flex-align-center {
   align-items: center;
 }
-.flex-align-flexend {
+.flex-align-end {
   align-items: flex-end;
 }
-.flex-align-flexstart {
+.flex-align-start {
   align-items: flex-start;
 }
 
@@ -206,10 +206,10 @@
 .flex-align-center.align-self {
   align-self: center;
 }
-.flex-align-flexend.align-self {
+.flex-align-end.align-self {
   align-self: flex-end;
 }
-.flex-align-flexstart.align-self {
+.flex-align-start.align-self {
   align-self: flex-start;
 }
 
@@ -373,7 +373,7 @@ SHORTHAND SYNTAX FOR FLEXBOX UTIL LIBRARY @rabbitwerks.js
 */
 
 
-.fbx {
+.fxbx {
   display: flex;
 }
 
@@ -427,29 +427,35 @@ SHORTHAND SYNTAX FOR FLEXBOX UTIL LIBRARY @rabbitwerks.js
   flex: 12;
 }
 
-.fbx.sp-ctr {
+.fxbx.sp-ctr {
   justify-content: center;
   align-items: center;
 }
-.fbx.j-ctr {
+.fxbx.j-ctr {
   justify-content: center;
 }
-.fbx.j-fs {
+.fxbx.j-fs {
   justify-content: flex-start;
 }
-.fbx.j-fe {
+.fxbx.j-fe {
   justify-content: flex-end;
 }
-.fbx.a-ctr {
+.fxbx.a-ctr {
   align-items: center;
 }
+.fxbx.a-fs {
+  align-items: flex-start;
+}
+.fxbx.a-fe {
+  align-items: flex-end;
+}
 
-.fbx.spc-bt {
+.fxbx.spc-bt {
   justify-content: space-between;
 }
-.fbx.spc-ar {
+.fxbx.spc-ar {
   justify-content: space-around;
 }
-.fbx.spc-ev {
+.fxbx.spc-ev {
   justify-content: space-evenly;
 }

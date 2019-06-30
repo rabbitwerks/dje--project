@@ -2,7 +2,7 @@
   <div class="admin--shell">
     <h1>Admin Panel</h1>
     <div 
-      class="admin--outer fbx"
+      class="admin--outer fxbx"
       :class="viewport.width < 480 ? 'fd-c' : ''"
     >
       <MenuPanel />

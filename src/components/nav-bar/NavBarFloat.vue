@@ -2,7 +2,7 @@
   <div
     v-toggle-nav-float="{ viewport }"
     :key="viewport.height"
-    class="navbar--float fbx j-ctr a-ctr">
+    class="navbar--float fxbx j-ctr a-ctr">
     <NavBarWrapper />
   </div>
 </template>

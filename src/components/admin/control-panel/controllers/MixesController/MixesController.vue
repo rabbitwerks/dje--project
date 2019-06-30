@@ -11,7 +11,7 @@
         v-if="addingNewMix"
         @cancelAdd="addingNewMix = false"
       />
-      <div class="add-mix--outer fbx flex-justify-end">
+      <div class="add-mix--outer fxbx flex-justify-end">
         <button
           @click="addingNewMix = true"
           class="btn add-new-mix"

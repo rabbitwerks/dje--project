@@ -4,13 +4,13 @@
     <div class="social-btns--text">
       {{ bioData.bookingContact }} {{ socials[selectedContact].name }}
     </div>
-    <div class="fbx a-ctr">
+    <div class="fxbx a-ctr">
       <div v-for="(social, index) in socials" :key="social.name"
         class="socials--select-group f1">
         <div
           @click="setNewContact(index)"
           :class="selectedContact === index ? 'selected' : ''"
-          class="social--item fbx sp-ctr">
+          class="social--item fxbx sp-ctr">
             <span class="social--item--text">
               {{ social.name | capitalize }}
             </span>

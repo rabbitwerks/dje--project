@@ -39,7 +39,7 @@
 - view-header reusable cmp
   -flexbox util shorthands
 - shorthand smaller class names for common properties added
-  - fbx - display: flexbox
+  - fxbx - display: flexbox
   - f1 - flex: 1
   - j-ctr - justify-content: center
   - a-ctr - align-items: center

@@ -1,5 +1,5 @@
 <template>
-  <div class="header--outer fbx j-ctr a-ctr">
+  <div class="header--outer fxbx j-ctr a-ctr">
     <h1 class="header--text" v-text="text" />
   </div>
 </template>

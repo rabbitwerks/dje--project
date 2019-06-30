@@ -1,15 +1,15 @@
 <template>
   <div 
-    class="bio-group--outer fbx j-ctr">
+    class="bio-group--outer fxbx j-ctr">
     <div 
-      class="bio-group--inner fbx"
+      class="bio-group--inner fxbx"
       :class="viewport.width < 480 
         ? ['fd-c', 'a-ctr']
         : 'j-ctr'
     "
     >
       <BioImage />
-      <BioText :text="bioData.text" :contact="contact"/>
+      <BioText :text="bioData.text" :bookingContact="bioData.bookingContact" :contact="contact"/>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
       return this.$store.getters.bioData_GET;
     },
     contact() {
-      return this.$store.getters.contactLink_GET;
+      return this.$store.getters.contactData_GET;
     }
   }
 }

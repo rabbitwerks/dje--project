@@ -4,7 +4,7 @@
     
     <div
       :class="viewport.width < 480 ? 'fd-c' : 'flexgap-2'" 
-      class="mix--group--inner fbx"
+      class="mix--group--inner fxbx"
     >
       <form class="mix--group--info f1">
 
@@ -45,7 +45,7 @@
 
       </form>
 
-      <div class="mix--group--description f1 fbx fd-c flexbox-space-between">
+      <div class="mix--group--description f1 fxbx fd-c flexbox-space-between">
 
           <div class="form--group">
             <label :for="'new-description'">Mix Description</label>
@@ -59,7 +59,7 @@
             />
           </div>
 
-          <div class="add-mix--manager fbx flex-justify-end">
+          <div class="add-mix--manager fxbx flex-justify-end">
             <button 
               @click="addNewMix"
               class="btn add-btn">

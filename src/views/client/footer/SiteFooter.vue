@@ -1,5 +1,5 @@
 <template>
-  <div class="site-footer--outer fbx fd-c sp-ctr">
+  <div class="site-footer--outer fxbx fd-c sp-ctr">
     <span class="site-footer--text">&copy;{{ brandText }}</span>
     <a :href="credit.link" class="credit">{{ credit.text }}</a>
   </div>

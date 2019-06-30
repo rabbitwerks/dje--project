@@ -1,7 +1,7 @@
 <template>
   <section 
     id="view--shows"
-    class="shows--shell view fbx fd-c a-ctr">
+    class="shows--shell view fxbx fd-c a-ctr">
     <ViewHeader :text="title" />
     <Tourbox />
   </section>

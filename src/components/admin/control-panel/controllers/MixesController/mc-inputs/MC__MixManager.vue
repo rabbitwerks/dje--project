@@ -1,5 +1,5 @@
 <template>
-  <div class="mix-manage--outer fbx flex-justify-end">
+  <div class="mix-manage--outer fxbx flex-justify-end">
     <button 
       v-if="beingEdited"
       @click="saveEdits(mix.id)"

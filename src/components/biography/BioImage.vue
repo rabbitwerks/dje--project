@@ -1,5 +1,5 @@
 <template>
-  <div class="bio--image fbx j-ctr a-ctr">
+  <div class="bio--image fxbx j-ctr a-ctr">
     <img :src="bioImg" alt="altText">
   </div>
 </template>

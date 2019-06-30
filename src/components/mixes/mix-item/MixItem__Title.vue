@@ -1,5 +1,5 @@
 <template>
-  <div class="mix--title--outer fbx j-ctr">
+  <div class="mix--title--outer fxbx j-ctr">
     <div class="mix--title--inner">
       {{ title }}
     </div>

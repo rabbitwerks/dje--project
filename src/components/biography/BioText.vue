@@ -1,15 +1,15 @@
 <template>
-  <div class="bio--text--outer flex-2 fbx a-ctr">
-    <p v-html="fullText" />
+  <div class="bio--text--outer flex-2 fxbx a-ctr">
+    <div v-html="fullText" />
   </div>
 </template>
 
 <script>
 export default {
-  props: ['text', 'contact'],
+  props: ['text', 'bookingContact', 'contact'],
   computed: {
     fullText() {
-      return `${ this.text } <a style="color: var(--font-color--main)" href="${ this.contact.link }">${ this.contact.name }</a>.`
+      return `${ this.text } ${ this.bookingContact } <a style="color: var(--font-color--main)" href="${ this.contact.link }>${ this.contact.name }</a>.`
     }
   },
 }

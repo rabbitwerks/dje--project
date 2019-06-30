@@ -9,7 +9,7 @@
 <script>
 import MixesController from './controllers/MixesController/MixesController.vue';
 import BiographyController from './controllers/BiographyController/BiographyController.vue';
-import SocialsController from './controllers/SocialsController.vue';
+import SocialsController from './controllers/SocialsController/SocialsController.vue';
 
 export default {
   components: {

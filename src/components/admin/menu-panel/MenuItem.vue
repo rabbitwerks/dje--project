@@ -1,7 +1,7 @@
 <template>
   <div
     @click="$store.dispatch('setActiveController_ACTION', item.controller)"
-    class="menu--item fbx a-ctr"
+    class="menu--item fxbx a-ctr"
     >{{ item.title }}
   </div>
 </template>

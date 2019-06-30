@@ -1,7 +1,7 @@
 <template>
   <section
     id="view--landing"
-    class="view landing--outer fbx fd-c sp-ctr">
+    class="view landing--outer fxbx fd-c sp-ctr">
     <SocialsWrapper class="flex-2" />
     <LandingImage class="flex-20" />
     <LandingBrand class="flex-8" :title="title" />

@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-item--outer fbx j-ctr a-ctr">
+  <div class="navbar-item--outer fxbx j-ctr a-ctr">
     <a class="navbar-item--inner" :href="href">
       {{ text }}
     </a>

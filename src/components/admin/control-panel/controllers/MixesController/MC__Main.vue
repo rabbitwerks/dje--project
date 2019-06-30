@@ -4,7 +4,7 @@
     
     <div
       :class="viewport.width < 480 ? 'fd-c' : 'flexgap-2'" 
-      class="mix--group--inner fbx"
+      class="mix--group--inner fxbx"
     >
       <div class="mix--group--info f1">
 
@@ -28,7 +28,7 @@
 
       </div>
 
-      <div class="mix--group--description f1 fbx fd-c flexbox-space-between">
+      <div class="mix--group--description f1 fxbx fd-c flexbox-space-between">
 
         <MC--Input--Description
           :mix="mix"

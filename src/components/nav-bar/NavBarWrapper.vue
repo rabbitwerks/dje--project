@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-wrapper--outer fbx">
+  <div class="navbar-wrapper--outer fxbx">
     <NavBarItem 
       v-for="(item, index) in navbarItems" 
       :key="index"

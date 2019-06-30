@@ -71,7 +71,7 @@ export default new Vuex.Store({
     },
     admin: {
       isLoggedIn: false,
-      activeController: 'BiographyController',
+      activeController: 'SocialsController',
       controllerMenu: [
         {
           title: 'Mixes',
@@ -150,6 +150,22 @@ export default new Vuex.Store({
       state.biographyData.text = edits.biographyEdits;
       state.biographyData.lastUpdated = Date.now().toLocaleString;
     },
+
+    // SOCIALS
+    updateSiteName_MUTA(state, payload) {
+      const { index, value } = payload;
+      state.globals.socials[index].name = value;
+    },
+    updateSiteURL_MUTA(state, payload) {
+      const { index, value } = payload;
+      state.globals.socials[index].link = value;
+    },
+    saveNewSocial_MUTA(state, payload) {
+      state.globals.socials.push(payload);
+    },
+    deleteSocialItem_MUTA(state, index) {
+      state.globals.socials.splice(index, 1);
+    },
   },
   actions: {
     // CLIENT
@@ -176,6 +192,20 @@ export default new Vuex.Store({
     // BIOGRAPHY
     saveBiographyEdits_ACTION({ commit }, edits) {
       commit('saveBiographyEdits_MUTA', edits);
+    },
+
+    // SOCIALS
+    updateSiteName_ACTION({ commit }, payload) {
+      commit('updateSiteName_MUTA', payload);
+    },
+    updateSiteURL_ACTION({ commit }, payload) {
+      commit('updateSiteURL_MUTA', payload);
+    },
+    saveNewSocial_ACTION({ commit }, payload) {
+      commit('saveNewSocial_MUTA', payload);
+    },
+    deleteSocialItem_ACTION({ commit }, index) {
+      commit('deleteSocialItem_MUTA', index);
     },
   },
 });
