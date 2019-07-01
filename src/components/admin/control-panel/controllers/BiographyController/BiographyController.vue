@@ -43,7 +43,8 @@ export default {
     return {
       biographyEdits: '',
       beingEdited: false,
-      selectedContact: 1
+      selectedContact: 1,
+      oldContact: 2
     }
   },
   computed: {
@@ -58,8 +59,9 @@ export default {
     },
   },
   methods: {
-    updateContact(value) {
-      this.selectedContact = value;
+    updateContact(payload) {
+      this.selectedContact = payload.newVal;
+      this.oldContact = payload.oldVal;
       this.beingEdited = true;
     },
     updateBio(value) {
@@ -76,6 +78,7 @@ export default {
     },
     cancelEdits() {
       this.biographyEdits = this.bioData.text;
+      this.selectedContact = this.oldContact;
       this.beingEdited = false;
     }
   }

@@ -30,7 +30,7 @@
             type="text"
             class="admin--input"
             placeholder="Enter the link of the social media site."
-            v-model="newSocial.siteLink"
+            v-model="newSocial.siteURL"
           >
         </div>
         </div>
@@ -47,7 +47,8 @@
           v-if="newSocial.editing"
           class="edit-btns fxbx j-fe">
           <button
-            @click="saveAdd"
+            @click="saveNewSocialItem"
+            :disabled="!newSocial.siteName || !newSocial.siteURL"
             class="save-social btn"
             >Save Contact
           </button>
@@ -87,10 +88,11 @@ export default {
   },
   methods: {
     addingNewSocialItem() {
+      if(this.socials.length === 5) return;
       this.newSocial.adding = true;
       this.newSocial.editing = true;
     },
-    saveAdd() {
+    saveNewSocialItem() {
       const payload = {
         siteName: this.newSocial.siteName,
         siteURL: this.newSocial.siteURL,
@@ -100,7 +102,8 @@ export default {
       this.newSocial.editing = false;
     },
     cancelAdd() {
-      console.log('hello')
+      this.newSocial.adding = false
+      this.newSocial.editing = false
     }
   }
 }

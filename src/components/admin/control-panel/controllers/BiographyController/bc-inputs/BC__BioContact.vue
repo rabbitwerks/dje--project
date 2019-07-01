@@ -25,7 +25,11 @@ export default {
   props: ['bioData', 'socials', 'selectedContact'],
   methods: {
     setNewContact(value) {
-      this.$emit('updateContact_CE', value)
+      const payload = {
+        oldVal: this.selectedContact,
+        newVal: value,
+      };
+      this.$emit('updateContact_CE', payload)
     },
   }
 }

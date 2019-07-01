@@ -161,7 +161,10 @@ export default new Vuex.Store({
       state.globals.socials[index].link = value;
     },
     saveNewSocial_MUTA(state, payload) {
-      state.globals.socials.push(payload);
+      state.globals.socials.push({
+        name: payload.siteName,
+        link: payload.siteURL,
+      });
     },
     deleteSocialItem_MUTA(state, index) {
       state.globals.socials.splice(index, 1);

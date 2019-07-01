@@ -1,5 +1,7 @@
 <template>
   <div class="social-item--outer fxbx">
+
+    <!-- SITE NAME INPUT -->
     <div class="form-group f1 site-name" >
       <label :for="social.name">Site Name:</label>
       <input 
@@ -18,6 +20,8 @@
           : $event.target.value = null"
       >
     </div>
+
+    <!-- SITE URL INPUT -->
     <div class="form-group f3 site-url">
       <label :for="social.link">Site URL:</label>
       <input 
@@ -25,9 +29,9 @@
         type="text"
         class="admin--input"
         :placeholder="social.link"
-        @focus="social.link
+        @focus="social.link && !edits.siteURL
           ? $event.target.value = social.link
-          : null
+          : null || edits.siteURL
         "
 
         v-model="edits.siteURL"
@@ -43,10 +47,18 @@
     <div class="manage-social-item--outer fxbx a-fe">
       <button
         v-if="edits.siteName || edits.siteURL"
-        @click="updateSiteName"
-        class="save-edits btn">Save Edits</button>
+        @click="updateSocialItem"
+        class="save-edits btn"
+        >Save Edits
+      </button>
       <button 
-        v-if="[ !edits.siteName || !edits.siteURL ] && [ edits.siteName && edits.siteURL ]"
+        v-if="edits.siteName || edits.siteURL"
+        @click="cancelSocialEdits"
+        class="cancel-edits btn"
+        >Cancel Edits
+      </button>
+      <button 
+        v-if="!edits.siteName && !edits.siteURL"
         @click="deleteSocialItem"
         class="delete-social btn"
         >Delete Item
@@ -69,11 +81,15 @@ export default {
     }
   },
   methods: {
-    updateSiteName() {
+    updateSocialItem() {
       this.$store.dispatch('updateSiteName_ACTION', {
         index: this.index,
         value: this.edits.siteName
       });
+    },
+    cancelSocialEdits() {
+      this.edits.siteName = '';
+      this.edits.siteURL = '';
     },
     deleteSocialItem() {
       if (confirm('Are You Fucking SHURE!<!<!<')) {
