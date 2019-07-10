@@ -1,9 +1,9 @@
 <template>
   <div class="admin--shell">
-    <h1>Admin Panel</h1>
-    <div 
-      class="admin--outer fxbx"
+    <h1>Admin Dashboard</h1>
+    <div
       :class="viewport.width < 480 ? 'fd-c' : ''"
+      class="admin--outer fxbx"
     >
       <MenuPanel />
       <ControllerPanel />

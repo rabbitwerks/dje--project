@@ -96,6 +96,7 @@ export default new Vuex.Store({
     mixesData_GET: state => state.mixesData,
     bioData_GET: state => state.biographyData,
     adminState_GET: state => state.admin,
+    isLoggedIn_GET: state => state.admin.isLoggedIn,
   },
   mutations: {
     // CLIENT
@@ -105,6 +106,9 @@ export default new Vuex.Store({
     },
 
     // ADMIN
+    adminLoggedIn_MUTA({ admin }) {
+      admin.isLoggedIn = true;
+    },
     setActiveController_MUTA({ admin }, payload) {
       admin.activeController = payload;
     },
@@ -177,6 +181,9 @@ export default new Vuex.Store({
     },
 
     // ADMIN
+    adminLoggedIn_ACTION({ commit }) {
+      commit('adminLoggedIn_MUTA');
+    },
     setActiveController_ACTION({ commit }, payload) {
       commit('setActiveController_MUTA', payload);
     },
