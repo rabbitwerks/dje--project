@@ -1,0 +1,13 @@
+.admin--shell {
+  min-height: 100vh;
+  padding: 2rem 5rem 0 5rem;
+  background-color: var(--view-color--one);
+}
+.admin--outer {
+  min-height: 90vh;
+  background-color: var(--view-color--two);
+  border: 2px solid #eee;
+}
+.admin-header--outer {
+  padding: 1rem 0 .5rem 0;
+}

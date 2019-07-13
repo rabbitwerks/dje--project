@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-param-reassign */
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -70,7 +71,12 @@ export default new Vuex.Store({
       lastUpdated: '06/10/19',
     },
     admin: {
-      isLoggedIn: false,
+      user: {
+        _id: '11111',
+        name: 'rw',
+        username: 'rwjs',
+        isLoggedIn: true,
+      },
       activeController: 'SocialsController',
       controllerMenu: [
         {
@@ -106,8 +112,12 @@ export default new Vuex.Store({
     },
 
     // ADMIN
-    adminLoggedIn_MUTA({ admin }) {
-      admin.isLoggedIn = true;
+    adminLoggedIn_MUTA({ admin }, payload) {
+      const { _id, name, username } = payload;
+      admin.user.isLoggedIn = true;
+      admin.user._id = _id;
+      admin.user.name = name;
+      admin.user.username = username;
     },
     setActiveController_MUTA({ admin }, payload) {
       admin.activeController = payload;
@@ -181,8 +191,8 @@ export default new Vuex.Store({
     },
 
     // ADMIN
-    adminLoggedIn_ACTION({ commit }) {
-      commit('adminLoggedIn_MUTA');
+    adminLoggedIn_ACTION({ commit }, payload) {
+      commit('adminLoggedIn_MUTA', payload);
     },
     setActiveController_ACTION({ commit }, payload) {
       commit('setActiveController_MUTA', payload);

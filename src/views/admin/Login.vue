@@ -1,43 +1,50 @@
 <template>
   <div class="admin--shell">
-    <h1>Admin Login</h1>
-    <div class="login--outer fxbx j-ctr a-ctr">
-      <div class="login--inner">
-        <div 
-          v-if="loggingIn" 
-          class="logging-in--outer"
-          >...logging...in...
-        </div>
+    <div class="admin-header--outer">
+      <div class="header--user-disp fxbx spc-bt a-ctr-">
+        <h1 class="header--title">Admin Login</h1>
+      </div>
+    </div>
+    <div class="login--shell fxbx j-ctr a-ctr">
+      <div class="login--outer">
+        <div class="login--inner">
+          <div 
+            v-if="loggingIn" 
+            class="logging-in--outer"
+            >...logging...in...
+          </div>
 
-        <div 
-          v-else 
-          class="login--form"
-          >
-          <div class="form--group">
-            <label for="login-username">Username</label>
-            <input
-              v-model="username"
-              type="text" 
-              id="login-username"
-              class="admin--input"
-              required
+          <div 
+            v-else 
+            class="login--form"
             >
+            <h3>Welcome Earthling - Please Log In...</h3>
+            <div class="form--group">
+              <label for="login-username">Username</label>
+              <input
+                v-model="username"
+                type="text" 
+                id="login-username"
+                class="admin--input"
+                required
+              >
+            </div>
+            <div class="form--group">
+              <label for="login-password">Password</label>
+              <input
+                v-model="password"
+                type="text" 
+                id="login-password"
+                class="admin--input"
+                required
+              >
+            </div>
+            <button
+              @click="attemptLogin"
+              class="btn login-btn"
+              >Login
+            </button>
           </div>
-          <div class="form--group">
-            <label for="login-password">Password</label>
-            <input
-              v-model="password"
-              type="text" 
-              id="login-password"
-              class="admin--input"
-              required
-            >
-          </div>
-          <button
-            @click="attemptLogin"
-            class="btn login-btn"
-            >Login
-          </button>
         </div>
       </div>
       
@@ -89,15 +96,17 @@ export default {
             throw new Error(error.message);
           })
         }).then(result => {
+          const { payload, token } = result;
           this.loggingIn = false;
           // action / mutation to update isLoggedIn property
           // router push to admin page
-          localStorage.token = result.token;
-          this.$store.dispatch('adminLoggedIn_ACTION');
+          localStorage.token = token;
+          this.$store.dispatch('adminLoggedIn_ACTION', payload);
           this.$router.push('/admin');
         })
           .catch(error => {
             setTimeout(() => {
+              // display error message
               this.loggingIn = false
               this.errorMessage = error.message;
             }, 1000)
@@ -120,14 +129,17 @@ label {
   padding: 2rem 5rem;
   background-color: var(--view-color--one);
 }
-.login--outer {
+.login--shell {
   min-height: 90vh;
   padding: 1rem 4rem;
   background-color: var(--view-color--two);
   border: 2px solid #eee;
 }
-.login--inner {
-  width: 50vw;
+.login--outer {
+  width: 30vw;
+  padding: 1rem;
+  border: 2px solid var(--border--secondary);
+  border-radius: 3px;
 }
 .login-btn {
   margin-top: 1rem;

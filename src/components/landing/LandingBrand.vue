@@ -1,6 +1,6 @@
 <template>
   <div class="landing--brand">
-    <h1>{{ title }}</h1>
+    <h1>Joshua Ferris</h1>
   </div>
 </template>
 

@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Client from './views/client/Client.vue';
 import Admin from './views/admin/Admin.vue';
 import Login from './views/admin/Login.vue';
+import Profile from './views/admin/Profile.vue';
 
 Vue.use(Router);
 
@@ -29,6 +30,18 @@ export default new Router({
       path: '/admin',
       name: 'admin',
       component: Admin,
+      beforeEnter: (to, from, next) => {
+        if (!localStorage.token) {
+          next('/login');
+        } else {
+          next();
+        }
+      },
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: Profile,
       beforeEnter: (to, from, next) => {
         if (!localStorage.token) {
           next('/login');

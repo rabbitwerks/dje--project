@@ -330,6 +330,10 @@
 }
 
 
+.flex-spacer {
+  flex: 1;
+}
+
 
 /* flex transition classes 
   these classes are for transitioning the flex css property. each class increases the duration by 100ms until reaching a 1s max at the fxt-10 class.
