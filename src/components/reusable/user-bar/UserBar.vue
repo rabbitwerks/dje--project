@@ -50,13 +50,13 @@ export default {
   },
   data() {
     return {
-      showSettingsBar: false
+      showSettingsBar: false,
     }
   },
   methods: {
     navigateToProfile() {
       this.showSettingsBar = false;
-      this.$router.push('/profile')
+      this.$router.push('/profile');
     },
     attemptLogout() {
       localStorage.removeItem('token');
