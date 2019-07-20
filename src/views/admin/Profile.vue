@@ -10,6 +10,7 @@
       class="profile--outer fxbx sp-ctr"
     >
       <form class="profile--inner fxbx fd-c">
+        <h3 id="info-header">Update Information</h3>
         <InputName
           :name="user.name"
           @updateName_CE="updateEdits_Name"
@@ -22,81 +23,30 @@
           :username="user.username"
           @updateUsername_CE="updateEdits_Username"
         />
-        <!-- PASSWORD GORUP INPUTS -->
-        <h3>Change Password</h3>
+
+        <!-- PASSWORD GROUP INPUTS -->
+        <h3 id="pw-header">Change Password</h3>
+
         <!-- CURRENT PASSWORD INPUT -->
-        <div class="form--group">
-          <label for="profile-pw--current">Current Password</label>
-          <input
-            @focus="
-              !isEditing
-                ? $event.target.value = user.password
-                : $event.target.value = edits.password.current
-            "
-            v-model="edits.password.current"
-
-            @input="isEditing = true"
-
-            @blur="
-              isEditing
-                ? $event.target.value = edits.password.current
-                : $event.target.value = null
-            "
-            class="admin--input"
-            type="password"
-            autocomplete=""
-            id="profile-pw--current"
-          >
-        </div>
+        <InputCurrentPass 
+          @sendValue_CurrentPass_CE="updateEdits_CurrentPass"
+        />
 
         <!-- NEW PASSWORD INPUT -->
-        <div class="form--group">
-          <label for="profile-pw--new">New Password</label>
-          <input
-            @focus="
-              !isEditing
-                ? $event.target.value = null
-                : $event.target.value = edits.password.newPassword
-            "
-            v-model="edits.password.newPassword"
-
-            @input="isEditing = true"
-
-            @blur="
-              isEditing
-                ? $event.target.value = edits.password.newPassword
-                : $event.target.value = null
-            "
-            class="admin--input"
-            type="password"
-            autocomplete=""
-            id="profile-pw--new"
-          >
-        </div>
+        <InputNewPass 
+          @sendValue_NewPass_CE="updateEdits_NewPass"
+        />
 
         <!-- CONFIRM PASSWORD INPUT -->
-        <div class="form--group">
-          <label for="profile-pw--confirm">Confirm Password</label>
-          <input
-            @focus="
-              !isEditing
-                ? $event.target.value = null
-                : $event.target.value = edits.password.confirmPassword
-            "
-            v-model="edits.password.confirmPassword"
+        <InputConfirmPass 
+          v-if="displayConfirmPassword"
+          @sendValue_ConfirmPass_CE="updateEdits_ConfirmPass"
+        />
 
-            @input="isEditing = true"
-
-            @blur="
-              isEditing
-                ? $event.target.value = edits.password.confirmPassword
-                : $event.target.value = null
-            "
-            class="admin--input"
-            type="password"
-            autocomplete=""
-            id="profile-pw--confirm"
-          >
+        
+        <div v-if="this.editingProfile" class="action-btns--outer form--group fxbx">
+          <button class="btn">Save Changes</button>
+          <button class="btn">Cancel</button>
         </div>
       </form>
     </div>
@@ -105,9 +55,13 @@
 
 <script>
 import UserBar from '@/components/reusable/user-bar/UserBar.vue';
-import InputName from '../../components/admin/profile/Input_Name.vue';
-import InputEmail from '../../components/admin/profile/Input_Email.vue';
-import InputUsername from '../../components/admin/profile/Input_Username.vue';
+import InputName from '@/components/admin/profile/Input_Name.vue';
+import InputEmail from '@/components/admin/profile/Input_Email.vue';
+import InputUsername from '@/components/admin/profile/Input_Username.vue';
+
+import InputCurrentPass from '@/components/admin/profile/password-group/Input_PW_CurrentPass.vue';
+import InputNewPass from '@/components/admin/profile/password-group/Input_PW_NewPass.vue';
+import InputConfirmPass from '@/components/admin/profile/password-group/Input_PW_ConfirmPass.vue';
 
 export default {
   components: {
@@ -115,14 +69,19 @@ export default {
     InputName,
     InputEmail,
     InputUsername,
+    InputCurrentPass,
+    InputNewPass,
+    InputConfirmPass,
   },
   data() {
     return {
       editingProfile: false,
+      displayConfirmPassword: false,
       edits: {
         name: '',
         email: '',
         username: '',
+        // move password to separate object
         password: {
           current: '',
           newPassword: '',
@@ -148,6 +107,25 @@ export default {
       this.editingProfile = true;
       this.edits.email = payload;
     },
+    updateEdits_Username(payload) {
+      this.editingProfile = true;
+      this.edits.username = payload;
+    },
+    updateEdits_CurrentPass(payload) {
+      this.editingProfile = true;
+      this.edits.password.current = payload;
+    },
+    updateEdits_NewPass(payload) {
+      this.editingProfile = true;
+      this.edits.password.newPassword = payload;
+      if(this.edits.password.newPassword.length > 3) {
+        this.displayConfirmPassword = true;
+      }
+    },
+    updateEdits_ConfirmPass(payload) {
+      this.editingProfile = true;
+      this.edits.password.confirmPassword = payload;
+    },
   }
 
 }
@@ -165,6 +143,12 @@ export default {
 }
 .form--group {
   margin-bottom: 1rem;
+}
+.form--group:last-of-type {
+  margin-bottom: .5rem;
+}
+#pw-header {
+  margin-top: 1rem;
 }
 </style>
 
