@@ -10,56 +10,18 @@
       class="profile--outer fxbx sp-ctr"
     >
       <form class="profile--inner fxbx fd-c">
-        <InputUsername
+        <InputName
           :name="user.name"
           @updateName_CE="updateEdits_Name"
         />
-        <div class="form--group">
-          <label for="profile-email">Email</label>
-          <input
-            :placeholder="user.email"
-            @focus="
-              !isEditing && !edits.email
-                ? $event.target.value = user.email
-                : $event.target.value = edits.email
-            "
-            v-model="edits.email"
-
-            @input="isEditing = true"
-
-            @blur="
-              isEditing
-                ? $event.target.value = edits.email
-                : $event.target.value = null
-            "
-            class="admin--input"
-            type="email" 
-            id="profile-email"
-          >
-        </div>
-        <div class="form--group">
-          <label for="profile-username">Username</label>
-          <input
-            :placeholder="user.username"
-            @focus="
-              !isEditing && !edits.username
-                ? $event.target.value = user.username
-                : $event.target.value = edits.username
-            "
-            v-model="edits.username"
-
-            @input="isEditing = true"
-
-            @blur="
-              isEditing
-                ? $event.target.value = edits.username
-                : $event.target.value = null
-            "
-            class="admin--input"
-            type="text" 
-            id="profile-username"
-          >
-        </div>
+        <InputEmail 
+          :email="user.email"
+          @updateEmail_CE="updateEdits_Email"
+        />
+        <InputUsername 
+          :username="user.username"
+          @updateUsername_CE="updateEdits_Username"
+        />
         <!-- PASSWORD GORUP INPUTS -->
         <h3>Change Password</h3>
         <!-- CURRENT PASSWORD INPUT -->
@@ -143,16 +105,20 @@
 
 <script>
 import UserBar from '@/components/reusable/user-bar/UserBar.vue';
+import InputName from '../../components/admin/profile/Input_Name.vue';
+import InputEmail from '../../components/admin/profile/Input_Email.vue';
 import InputUsername from '../../components/admin/profile/Input_Username.vue';
 
 export default {
   components: {
     UserBar,
+    InputName,
+    InputEmail,
     InputUsername,
   },
   data() {
     return {
-      isEditing: false,
+      editingProfile: false,
       edits: {
         name: '',
         email: '',
@@ -175,9 +141,13 @@ export default {
   },
   methods: {
     updateEdits_Name(payload) {
-      this.isEditing = true;
+      this.editingProfile = true;
       this.edits.name = payload;
-    }
+    },
+    updateEdits_Email(payload) {
+      this.editingProfile = true;
+      this.edits.email = payload;
+    },
   }
 
 }

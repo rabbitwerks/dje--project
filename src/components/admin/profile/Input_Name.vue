@@ -1,25 +1,25 @@
 <template>
   <div class="form--group">
-    <label for="profile-username">Username</label>
+    <label for="profile-name">Name</label>
     <input
-      :placeholder="username"
+      :placeholder="name"
       @focus="
         !isEditing
-          ? $event.target.value = username
-          : $event.target.value = updatedUsername
+          ? $event.target.value = name
+          : $event.target.value = updatedName
       "
-      v-model="updatedUsername"
+      v-model="updatedName"
 
       @input="handleInput"
 
       @blur="
         isEditing
-          ? $event.target.value = updatedUsername
+          ? $event.target.value = updatedName
           : $event.target.value = null
       "
       class="admin--input"
       type="text" 
-      id="profile-username"
+      id="profile-name"
     >
   </div>
 </template>
@@ -27,7 +27,7 @@
 <script>
 export default {
   props: {
-    username: {
+    name: {
       type: String,
       required: true,
       default: '',
@@ -36,14 +36,14 @@ export default {
   data() {
     return {
       isEditing: false,
-      updatedUsername: '',
+      updatedName: ''
     }
   },
   methods: {
     handleInput() {
       this.isEditing = true;
-      this.$emit('updateUsername_CE', this.updatedUsername);
-    },
-  },
+      this.$emit('updateName_CE', this.updatedName);
+    }
+  }
 }
 </script>

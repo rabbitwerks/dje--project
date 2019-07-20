@@ -1,6 +1,6 @@
 <template>
   <div class="landing--brand">
-    <h1>Joshua Ferris</h1>
+    <h1>DJ Encounter</h1>
   </div>
 </template>
 
