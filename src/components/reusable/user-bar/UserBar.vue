@@ -9,11 +9,16 @@
         class="ub--options">
         <div class="user-options--outer fxbx">
           <UserOption
-            v-if="this.$options._componentTag === 'Admin'"
-            @click.native="navigateToProfile"
-            optionText="Profile"
+            @click.native="navigateToSite"
+            optionText="Main Site"
           />
           <UserOption
+            v-if="this.pageLocation === 'profile'"
+            @click.native="navigateToDashboard"
+            optionText="Dashboard"
+          />
+          <UserOption
+            v-else
             @click.native="navigateToProfile"
             optionText="Profile"
           />
@@ -54,6 +59,14 @@ export default {
     }
   },
   methods: {
+    navigateToSite() {
+      this.showSettingsBar = false;
+      this.$router.push('/');
+    },
+    navigateToDashboard() {
+      this.showSettingsBar = false;
+      this.$router.push('/admin');
+    },
     navigateToProfile() {
       this.showSettingsBar = false;
       this.$router.push('/profile');
