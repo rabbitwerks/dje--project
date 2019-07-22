@@ -5,13 +5,14 @@
     <div class="form-group f1 site-name" >
       <label :for="social.name">Site Name:</label>
       <input 
-        :id="social.name" 
         type="text"
         class="admin--input"
+        :id="social.name" 
+        ref="name"
         :placeholder="social.name | capitalize"
         @focus="!edits.siteName
           ? $event.target.value = social.name
-          : null"
+          : $event.target.value = null"
         
         v-model="edits.siteName"
 
@@ -25,9 +26,10 @@
     <div class="form-group f3 site-url">
       <label :for="social.link">Site URL:</label>
       <input 
-        :id="social.link" 
         type="text"
         class="admin--input"
+        :id="social.link" 
+        ref="link"
         :placeholder="social.link"
         @focus="social.link && !edits.siteURL
           ? $event.target.value = social.link
@@ -82,17 +84,30 @@ export default {
   },
   methods: {
     updateSocialItem() {
-      this.$store.dispatch('updateSiteName_ACTION', {
-        index: this.index,
-        value: this.edits.siteName
-      });
+      if (!this.edits.siteName && !this.edits.siteURL) {
+        // error message
+        console.log('Saving requires either a site name and url.')
+      } else {
+        this.$store.dispatch('updateSiteName_ACTION', {
+          index: this.index,
+          name: this.edits.siteName || this.social.name,
+        });
+        this.$store.dispatch('updateSiteURL_ACTION', {
+          index: this.index,
+          link: this.edits.siteURL || this.social.link,
+        });
+        this.edits.siteName = '';
+        this.edits.siteURL = '';
+      }
+      this.$refs.name.value = null;
+      this.$refs.link.value = null;
     },
     cancelSocialEdits() {
       this.edits.siteName = '';
       this.edits.siteURL = '';
     },
     deleteSocialItem() {
-      if (confirm('Are You Fucking SHURE!<!<!<')) {
+      if (confirm('Are you sure you want to delete this social media item?')) {
         this.$store.dispatch('deleteSocialItem_ACTION', this.index);
         this.edits.siteName = '';
         this.edits.siteURL = ''

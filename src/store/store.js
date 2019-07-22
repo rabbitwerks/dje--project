@@ -167,12 +167,12 @@ export default new Vuex.Store({
 
     // SOCIALS
     updateSiteName_MUTA(state, payload) {
-      const { index, value } = payload;
-      state.globals.socials[index].name = value;
+      const { index, name } = payload;
+      state.globals.socials[index].name = name;
     },
     updateSiteURL_MUTA(state, payload) {
-      const { index, value } = payload;
-      state.globals.socials[index].link = value;
+      const { index, link } = payload;
+      state.globals.socials[index].link = link;
     },
     saveNewSocial_MUTA(state, payload) {
       state.globals.socials.push({
