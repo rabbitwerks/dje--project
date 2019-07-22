@@ -19,8 +19,6 @@ import capitalize from './filters/capitalize';
 
 const importGroup = {
   vToggleNavFloat,
-  viewport,
-  pageLocation,
   capitalize,
 };
 

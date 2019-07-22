@@ -6,9 +6,7 @@
         <UserBar :name="user.name" />
       </div>
     </div>
-    <div
-      class="profile--outer fxbx sp-ctr"
-    >
+    <div class="profile--outer fxbx sp-ctr">
       <form class="profile--inner fxbx fd-c">
         <h3 id="info-header">Update Information</h3>
         <InputName
