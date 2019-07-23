@@ -211,6 +211,9 @@ export default new Vuex.Store({
 
     // BIOGRAPHY
     saveBiographyEdits_ACTION({ commit }, edits) {
+      // send updates to backend then DB [POST]
+
+      // retrieve updated data, save in store [GET]
       commit('saveBiographyEdits_MUTA', edits);
     },
 
