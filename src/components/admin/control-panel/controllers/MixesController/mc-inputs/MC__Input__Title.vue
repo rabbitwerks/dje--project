@@ -1,9 +1,9 @@
 <template>
   <div class="form--group">
-    <label :for="'title' + mix.id">Mix Title</label>
+    <label :for="'title' + mix._id">Mix Title</label>
     <input 
       type="text" class="admin--input mix--title"
-      :id="'title' + mix.id"
+      :id="'title' + mix._id"
       :placeholder="mix.title"
 
       @focus="!newTitle

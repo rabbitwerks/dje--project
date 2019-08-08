@@ -9,6 +9,33 @@
       <div class="register--inner fxbx fd-c">
         <h3>Register New Admin</h3>
       </div>
+      <form action="POST" class="register-form">
+        <!-- <InputName
+          :name="user.name"
+          @updateName_CE="updateEdits_Name"
+        />
+        <InputEmail 
+          :email="user.email"
+          @updateEmail_CE="updateEdits_Email"
+        />
+        <InputUsername 
+          :username="user.username"
+          @updateUsername_CE="updateEdits_Username"
+        /> -->
+
+        <!-- PASSWORD GROUP INPUTS -->
+        <h3 id="pw-header">Change Password</h3>
+        <!-- NEW PASSWORD INPUT -->
+        <!-- <InputNewPass 
+          @sendValue_NewPass_CE="updateEdits_NewPass"
+        /> -->
+
+        <!-- CONFIRM PASSWORD INPUT -->
+        <!-- <InputConfirmPass 
+          v-if="displayConfirmPassword"
+          @sendValue_ConfirmPass_CE="updateEdits_ConfirmPass"
+        /> -->
+      </form>
     </div>
   </div>
 </template>

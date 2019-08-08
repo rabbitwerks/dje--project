@@ -1,9 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-param-reassign */
+/* eslint-disable max-len */
+
 import Vue from 'vue';
 import Vuex from 'vuex';
 
 Vue.use(Vuex);
+
+// Localhost Backend
+const LOCAL_BACKEND_URL = 'http://localhost:1337';
 
 export default new Vuex.Store({
   state: {
@@ -34,33 +39,33 @@ export default new Vuex.Store({
     },
     mixesData: {
       mixes: [
-        {
-          id: 0,
-          title: 'Keepers Of The Labyrinth #06',
-          embeds: {
-            desktop: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/578796651&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
-            mobile: '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/616801515&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
-          },
-          description: 'Join the Keepers of the Labyrinth every Sunday on Impulse Radio from 2100(CH) / 2200(SA) on a journey deep into the darker reaches of Contemporary Techno.',
-        },
-        {
-          id: 1,
-          title: 'Techno Tuesday at Amsterdam Bar & Hall (LIVE) 2-19-19',
-          embeds: {
-            desktop: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/578796651&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
-            mobile: '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/578796651&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
-          },
-          description: 'Set recorded from Techno Tuesday at Amsterdam Bar & Hall in Saint Paul, MN on February 19, 2019. Direct Support for Centrific. I went a little deeper into mixing with three decks with this set.',
-        },
-        {
-          id: 2,
-          title: 'BLCK Mass (live) at The Exchange in Minneapolis, MN 10-21-18',
-          embeds: {
-            desktop: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/522448692&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
-            mobile: '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/522448692&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
-          },
-          description: 'My first time playing the BLCK Mass stage, plus my first time playing at The Exchange. I experimented with track selection for this in an attempt to reach beyond my typical style of playing Techno.',
-        },
+        // {
+        //   id: 0,
+        //   title: 'Keepers Of The Labyrinth #06',
+        //   embeds: {
+        //     desktop: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/602602950&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
+        //     mobile: '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/602602950&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+        //   },
+        //   description: 'Join the Keepers of the Labyrinth every Sunday on Impulse Radio from 2100(CH) / 2200(SA) on a journey deep into the darker reaches of Contemporary Techno.',
+        // },
+        // {
+        //   id: 1,
+        //   title: 'Techno Tuesday at Amsterdam Bar & Hall (LIVE) 2-19-19',
+        //   embeds: {
+        //     desktop: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/578796651&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
+        //     mobile: '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/578796651&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+        //   },
+        //   description: 'Set recorded from Techno Tuesday at Amsterdam Bar & Hall in Saint Paul, MN on February 19, 2019. Direct Support for Centrific. I went a little deeper into mixing with three decks with this set.',
+        // },
+        // {
+        //   id: 2,
+        //   title: 'BLCK Mass (live) at The Exchange in Minneapolis, MN 10-21-18',
+        //   embeds: {
+        //     desktop: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/522448692&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
+        //     mobile: '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/522448692&color=%23181818&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+        //   },
+        //   description: 'My first time playing the BLCK Mass stage, plus my first time playing at The Exchange. I experimented with track selection for this in an attempt to reach beyond my typical style of playing Techno.',
+        // },
       ],
       info: 'These are just a few of the best. My entire collection of mixes is available to stream on SoundCloud.',
       lastUpdated: '06/05/19',
@@ -72,8 +77,10 @@ export default new Vuex.Store({
     },
     admin: {
       user: {
+        // empty for production build
         _id: '11111',
         name: 'rw',
+        email: 'test@test.com',
         username: 'rwjs',
         isLoggedIn: true,
       },
@@ -111,6 +118,13 @@ export default new Vuex.Store({
       globals.viewport.height = payload.height;
     },
 
+    initRequestRemoteData_MUTA(state, payload) {
+      const { mixes, biography, socials } = payload;
+      state.mixesData.mixes = mixes.docs;
+      state.mixesData.biography = biography.docs;
+      state.mixesData.socials = socials.docs;
+    },
+
     // ADMIN
     adminLoggedIn_MUTA({ admin }, payload) {
       const { _id, name, username } = payload;
@@ -125,32 +139,32 @@ export default new Vuex.Store({
 
     // MIXES
     saveMixEdits_MUTA(state, payload) {
-      const { id, edits } = payload;
-      const mixData = Object.entries(state.mixesData.mixes[id]);
+      // const { id, edits } = payload;
+      // const mixData = Object.entries(state.mixesData.mixes[id]);
 
-      const mixTitle = mixData[1][1];
-      const mixEmbeds = mixData[2][1];
-      const mixDescription = mixData[3][1];
-      if (mixTitle !== edits.title) {
-        if (edits.title) {
-          state.mixesData.mixes[id].title = edits.title;
-        }
-      }
-      if (mixEmbeds.desktop !== edits.embeds.desktop) {
-        if (edits.embeds.desktop) {
-          state.mixesData.mixes[id].embeds.desktop = edits.embeds.desktop;
-        }
-      }
-      if (mixEmbeds.mobile !== edits.embeds.mobile) {
-        if (edits.embeds.mobile) {
-          state.mixesData.mixes[id].embeds.mobile = edits.embeds.mobile;
-        }
-      }
-      if (mixDescription !== edits.description) {
-        if (edits.description) {
-          state.mixesData.mixes[id].description = edits.description;
-        }
-      }
+      // const mixTitle = mixData[1][1];
+      // const mixEmbeds = mixData[2][1];
+      // const mixDescription = mixData[3][1];
+      // if (mixTitle !== edits.title) {
+      //   if (edits.title) {
+      //     state.mixesData.mixes[id].title = edits.title;
+      //   }
+      // }
+      // if (mixEmbeds.desktop !== edits.embeds.desktop) {
+      //   if (edits.embeds.desktop) {
+      //     state.mixesData.mixes[id].embeds.desktop = edits.embeds.desktop;
+      //   }
+      // }
+      // if (mixEmbeds.mobile !== edits.embeds.mobile) {
+      //   if (edits.embeds.mobile) {
+      //     state.mixesData.mixes[id].embeds.mobile = edits.embeds.mobile;
+      //   }
+      // }
+      // if (mixDescription !== edits.description) {
+      //   if (edits.description) {
+      //     state.mixesData.mixes[id].description = edits.description;
+      //   }
+      // }
     },
     deleteMix_MUTA(state, id) {
       state.mixesData.mixes.splice(id, 1);
@@ -162,7 +176,7 @@ export default new Vuex.Store({
     // BIOGRAPHY
     saveBiographyEdits_MUTA(state, edits) {
       state.biographyData.text = edits.biographyEdits;
-      state.biographyData.lastUpdated = Date.now().toLocaleString;
+      state.biographyData.lastUpdated = Date.now().toLocaleString();
     },
 
     // SOCIALS
@@ -190,6 +204,29 @@ export default new Vuex.Store({
       commit('calcViewportDimensions_MUTA', payload);
     },
 
+    async initRequestRemoteData_ACTION({ commit }) {
+      // fetch mixes
+      const mixesResponse = await fetch(`${LOCAL_BACKEND_URL}/api/v1/mixes`);
+      const mixes = await mixesResponse.json();
+
+      // fetch bio
+      const bioResponse = await fetch(`${LOCAL_BACKEND_URL}/api/v1/biography`);
+      const biography = await bioResponse.json();
+
+      // fetch socials
+      const socialsResponse = await fetch(`${LOCAL_BACKEND_URL}/api/v1/socials`);
+      const socials = await socialsResponse.json();
+
+      // payload
+      const payload = {
+        mixes,
+        biography,
+        socials,
+      };
+      // muta save to state
+      commit('initRequestRemoteData_MUTA', payload);
+    },
+
     // ADMIN
     adminLoggedIn_ACTION({ commit }, payload) {
       commit('adminLoggedIn_MUTA', payload);
@@ -199,7 +236,65 @@ export default new Vuex.Store({
     },
 
     // MIXES
-    saveMixEdits_ACTION({ commit }, payload) {
+    saveMixEdits_ACTION({ state, commit }, payload) {
+      // to be sent to DB
+      const initialRemotePayload = {
+        title: '',
+        embeds: {
+          desktop: '',
+          mobile: '',
+        },
+        description: '',
+      };
+      const { _id, edits } = payload;
+
+      const index = state.mixesData.mixes.map(mix => mix._id).indexOf(_id);
+      const mixData = Object.entries(state.mixesData.mixes[index]);
+
+      const mixTitle = mixData[1][1];
+      const mixEmbeds = mixData[2][1];
+      const mixDescription = mixData[3][1];
+
+      if (edits.title
+          && edits.title !== mixTitle) {
+        initialRemotePayload.title = edits.title;
+      }
+
+      if (edits.embeds.desktop
+          && edits.embeds.desktop !== mixEmbeds.desktop) {
+        initialRemotePayload.embeds.desktop = edits.embeds.desktop;
+      }
+
+      if (edits.embeds.mobile
+          && edits.embeds.mobile !== mixEmbeds.mobile) {
+        initialRemotePayload.embeds.mobile = edits.embeds.mobile;
+      }
+
+      if (edits.description
+          && edits.description !== mixDescription) {
+        initialRemotePayload.description = edits.description;
+      }
+
+      // remote payload fallback values from vuex store if not provided from edits
+      const validatedRemotePayload = {
+        title: initialRemotePayload.title || mixTitle,
+        embeds: {
+          desktop: initialRemotePayload.embeds.desktop || mixEmbeds.desktop,
+          mobile: initialRemotePayload.embeds.desktop || mixEmbeds.mobile,
+        },
+        description: initialRemotePayload.description || mixDescription,
+      };
+
+      fetch(`${LOCAL_BACKEND_URL}/api/v1/mixes/${_id}/update`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          token: localStorage.token,
+        },
+        body: JSON.stringify(validatedRemotePayload),
+      }).then(response => response.json())
+        .then(data => console.log(data));
+
       commit('saveMixEdits_MUTA', payload);
     },
     deleteMix_ACTION({ commit }, id) {
@@ -210,11 +305,23 @@ export default new Vuex.Store({
     },
 
     // BIOGRAPHY
-    saveBiographyEdits_ACTION({ commit }, edits) {
+    saveBiographyEdits_ACTION({ state, commit }, edits) {
       // send updates to backend then DB [POST]
-
-      // retrieve updated data, save in store [GET]
-      commit('saveBiographyEdits_MUTA', edits);
+      if (state.admin.user.isLoggedIn) {
+        fetch(`${LOCAL_BACKEND_URL}/api/biography`, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            token: localStorage.token,
+          },
+          body: JSON.stringify(edits),
+        })
+          .then(response => response.json())
+          .then(resolve => console.log(resolve))
+          .catch(error => console.log(error));
+        // retrieve updated data, save in store [GET]
+        commit('saveBiographyEdits_MUTA', edits);
+      }
     },
 
     // SOCIALS

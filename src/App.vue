@@ -15,6 +15,9 @@ export default {
     this.width = payload.width;
     this.height = payload.height;
     this.$store.dispatch('calcViewportDimensions_ACTION', payload)
+    
+    // request most up to date data from db
+    this.$store.dispatch('initRequestRemoteData_ACTION');
   },
   mounted() {
     window.addEventListener('resize', () => {

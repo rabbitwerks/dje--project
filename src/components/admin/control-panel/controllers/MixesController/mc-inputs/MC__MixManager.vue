@@ -2,12 +2,12 @@
   <div class="mix-manage--outer fxbx flex-justify-end">
     <button 
       v-if="beingEdited"
-      @click="saveEdits(mix.id)"
+      @click="saveEdits(mix._id)"
       class="btn save-btn"
       >Save Edits
     </button>
     <button
-      @click="deleteMix(mix.id)"
+      @click="deleteMix(mix._id)"
       class="btn"
       >Delete Mix</button>
   </div>
@@ -17,12 +17,12 @@
 export default {
   props: ['mix', 'beingEdited'],
   methods: {
-    saveEdits(id) {
-      this.$emit('saveEdits_CE', id)
+    saveEdits(_id) {
+      this.$emit('saveEdits_CE', _id)
     },
-    deleteMix(id) {
+    deleteMix(_id) {
       if (confirm('Are you sure you want to delete this mix entry?')) {
-        this.$emit('deleteMix_CE', id)
+        this.$emit('deleteMix_CE', _id)
       };
       return;
     }

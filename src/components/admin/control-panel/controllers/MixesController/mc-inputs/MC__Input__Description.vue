@@ -1,8 +1,8 @@
 <template>
   <div class="form--group">
-    <label :for="'description' + mix.id">Mix Description</label>
+    <label :for="'description' + mix._id">Mix Description</label>
     <textarea
-      :id="'description' + mix.id"
+      :id="'description' + mix._id"
       :placeholder="mix.description"
       @focus="!newDescription
         ? $event.target.value = mix.description

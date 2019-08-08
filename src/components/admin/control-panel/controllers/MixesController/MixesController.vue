@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import ControllerHeader from '@/components/reusable/controller-header/ControllerHeader.vue';
+import ControllerHeader from '@/components/reusable/admin/controller-header/ControllerHeader.vue';
 import MC__Main from './MC__Main.vue';
 import MC__AddNewMix from './mc-add-new-mix/MC__AddNewMix.vue';
 

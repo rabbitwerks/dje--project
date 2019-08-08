@@ -1,9 +1,9 @@
 <template>
   <div class="form--group">
-    <label :for="'mix--mobile' + mix.id">Mobile Embed Link</label>
+    <label :for="'mix--mobile' + mix._id">Mobile Embed Link</label>
     <input
       type="text" class="admin--input mix--embed--mobile"
-      :id="'mix--mobile' + mix.id"
+      :id="'mix--mobile' + mix._id"
       :placeholder="mix.embeds.mobile"
       @focus="!newMobileEmbed
         ? $event.target.value = mix.embeds.mobile

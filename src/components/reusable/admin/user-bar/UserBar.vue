@@ -32,7 +32,7 @@
         <!-- needs to settings cog in svg format ;) -->
         <img 
           class="settings-cog pointer"
-          src="../../../assets/img/single_cog_SM.svg" 
+          src="../../../../assets/img/single_cog_SM.svg" 
           alt="settings cog svg">
         <img>
       </div>

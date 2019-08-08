@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import UserBar from '@/components/reusable/user-bar/UserBar.vue';
+import UserBar from '@/components/reusable/admin/user-bar/UserBar.vue';
 import InputName from '@/components/admin/profile/Input_Name.vue';
 import InputEmail from '@/components/admin/profile/Input_Email.vue';
 import InputUsername from '@/components/admin/profile/Input_Username.vue';

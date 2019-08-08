@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import UserBar from '@/components/reusable/user-bar/UserBar.vue'
+import UserBar from '@/components/reusable/admin/user-bar/UserBar.vue'
 import MenuPanel from '@/components/admin/menu-panel/MenuPanel.vue';
 import ControllerPanel from '@/components/admin/control-panel/ControllerPanel.vue';
 

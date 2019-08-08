@@ -8,9 +8,9 @@ import Profile from './views/admin/Profile.vue';
 
 Vue.use(Router);
 
-function isLoggedIn(to, from, next, route) {
+function isLoggedIn(to, from, next, toRoute) {
   if (localStorage.token) {
-    next(route);
+    next(toRoute);
   } else {
     next('/login');
   }
@@ -27,33 +27,33 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login,
-      beforeEnter: (to, from, next) => {
-        isLoggedIn(to, from, next, '/admin');
-      },
+      // beforeEnter: (to, from, next) => {
+      //   isLoggedIn(to, from, next, '/admin');
+      // },
     },
     {
       path: '/register',
       name: 'register',
       component: Register,
-      beforeEnter: (to, from, next) => {
-        isLoggedIn(to, from, next);
-      },
+      // beforeEnter: (to, from, next) => {
+      //   isLoggedIn(to, from, next, '/admin');
+      // },
     },
     {
       path: '/admin',
       name: 'admin',
       component: Admin,
-      beforeEnter: (to, from, next) => {
-        isLoggedIn(to, from, next);
-      },
+      // beforeEnter: (to, from, next) => {
+      //   isLoggedIn(to, from, next);
+      // },
     },
     {
       path: '/profile',
       name: 'profile',
       component: Profile,
-      beforeEnter: (to, from, next) => {
-        isLoggedIn(to, from, next);
-      },
+      // beforeEnter: (to, from, next) => {
+      //   isLoggedIn(to, from, next);
+      // },
     },
   ],
 });

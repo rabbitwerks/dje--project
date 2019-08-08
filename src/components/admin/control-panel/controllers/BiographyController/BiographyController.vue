@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import ControllerHeader from '../../../../reusable/controller-header/ControllerHeader.vue'
+import ControllerHeader from '../../../../reusable/admin/controller-header/ControllerHeader.vue';
 
 import BC__BioText from './bc-inputs/BC__BioText.vue';
 import BC__BioContact from './bc-inputs/BC__BioContact.vue';

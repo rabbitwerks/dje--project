@@ -100,9 +100,9 @@ export default {
       this.beingEdited = true;
       this.edits.description = value;
     },
-    saveEdits(id) {
+    saveEdits(_id) {
       const payload = {
-        id,
+        _id,
         edits: this.edits,
       };
       this.$store.dispatch('saveMixEdits_ACTION', payload);

@@ -1,9 +1,9 @@
 <template>
   <div class="form--group">
-    <label :for="'mix--desktop' + mix.id">Desktop Embed Link</label>
+    <label :for="'mix--desktop' + mix._id">Desktop Embed Link</label>
     <input
       type="text" class="admin--input mix--embed--desktop"
-      :id="'mix--desktop' + mix.id"
+      :id="'mix--desktop' + mix._id"
       :placeholder="mix.embeds.desktop"
       @focus="!newDesktopEmbed
         ? $event.target.value = mix.embeds.desktop

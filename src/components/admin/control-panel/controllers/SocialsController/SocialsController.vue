@@ -1,8 +1,6 @@
 <template>
   <div class="socials-controller--shell">
-    <div class="controller--header fxbx a-ctr">
-      Social Media Content Editor
-    </div>
+    <ControllerHeader text="Social Media | Content Editor" />
     <div class="socials-controller--outer">
 
       <SC--SocialGroup
@@ -65,10 +63,12 @@
 </template>
 
 <script>
+import ControllerHeader from '../../../../reusable/admin/controller-header/ControllerHeader.vue';
 import SC__SocialGroup from './SC__SocialGroup.vue';
 
 export default {
   components: {
+    ControllerHeader,
     'SC--SocialGroup': SC__SocialGroup,
   },
   data() {
