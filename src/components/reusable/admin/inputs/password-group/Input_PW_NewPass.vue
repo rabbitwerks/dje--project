@@ -1,6 +1,6 @@
 <template>
   <div class="form--group">
-    <label for="profile-pw--new">New Password</label>
+    <label for="profile-pw--new">{{ label }}</label>
     <input
       v-model="newPassword"
 
@@ -21,6 +21,11 @@
 
 <script>
 export default {
+  props: {
+    label: String,
+    required: true,
+    default: 'Password',
+  },
   data() {
     return {
       isEditing: false,
