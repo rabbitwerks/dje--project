@@ -223,6 +223,7 @@ export default new Vuex.Store({
         biography,
         socials,
       };
+      console.log(payload)
       // muta save to state
       commit('initRequestRemoteData_MUTA', payload);
     },

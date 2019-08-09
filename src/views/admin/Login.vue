@@ -96,12 +96,12 @@ export default {
             throw new Error(error.message);
           })
         }).then(result => {
-          const { payload, token } = result;
+          const { user, token } = result;
           this.loggingIn = false;
           // action / mutation to update isLoggedIn property
           // router push to admin page
           localStorage.token = token;
-          this.$store.dispatch('adminLoggedIn_ACTION', payload);
+          this.$store.dispatch('adminLoggedIn_ACTION', user);
           this.$router.push('/admin');
         })
           .catch(error => {
