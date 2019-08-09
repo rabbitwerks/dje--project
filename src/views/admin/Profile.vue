@@ -52,24 +52,13 @@
 </template>
 
 <script>
-import UserBar from '@/components/reusable/admin/user-bar/UserBar.vue';
-import InputName from '@/components/admin/profile/Input_Name.vue';
-import InputEmail from '@/components/admin/profile/Input_Email.vue';
-import InputUsername from '@/components/admin/profile/Input_Username.vue';
-
-import InputCurrentPass from '@/components/admin/profile/password-group/Input_PW_CurrentPass.vue';
-import InputNewPass from '@/components/admin/profile/password-group/Input_PW_NewPass.vue';
-import InputConfirmPass from '@/components/admin/profile/password-group/Input_PW_ConfirmPass.vue';
+import UserBar from '../../components/reusable/admin/user-bar/UserBar.vue';
+import InputGroup from '../../components/reusable/admin/inputs/inputGroup.js';
 
 export default {
   components: {
     UserBar,
-    InputName,
-    InputEmail,
-    InputUsername,
-    InputCurrentPass,
-    InputNewPass,
-    InputConfirmPass,
+    ...InputGroup
   },
   data() {
     return {

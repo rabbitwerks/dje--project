@@ -8,41 +8,49 @@
     <div class="register--outer fxbx sp-ctr">
       <div class="register--inner fxbx fd-c">
         <h3>Register New Admin</h3>
+        <form action="POST" class="register-form">
+          <InputName
+            :name="null"
+            @updateName_CE="updateRegData_Name"
+          />
+          <InputEmail 
+            :email="null"
+            @updateEmail_CE="updateRegData_Email"
+          />
+          <InputUsername 
+            :username="null"
+            @updateUsername_CE="updateRegData_Username"
+          />
+
+          <!-- PASSWORD GROUP INPUTS -->
+          <h3 id="pw-header">Password</h3>
+          <!-- NEW PASSWORD INPUT -->
+          <InputNewPass 
+            label="Enter Password"
+            @sendValue_NewPass_CE="updateRegData_NewPass"
+          />
+
+          <!-- CONFIRM PASSWORD INPUT -->
+          <InputConfirmPass 
+            v-if="displayConfirmPassword"
+            @sendValue_ConfirmPass_CE="updateRegData_ConfirmPass"
+          />
+
+          
+        </form>
       </div>
-      <form action="POST" class="register-form">
-        <!-- <InputName
-          :name="user.name"
-          @updateName_CE="updateEdits_Name"
-        />
-        <InputEmail 
-          :email="user.email"
-          @updateEmail_CE="updateEdits_Email"
-        />
-        <InputUsername 
-          :username="user.username"
-          @updateUsername_CE="updateEdits_Username"
-        /> -->
-
-        <!-- PASSWORD GROUP INPUTS -->
-        <h3 id="pw-header">Change Password</h3>
-        <!-- NEW PASSWORD INPUT -->
-        <!-- <InputNewPass 
-          @sendValue_NewPass_CE="updateEdits_NewPass"
-        /> -->
-
-        <!-- CONFIRM PASSWORD INPUT -->
-        <!-- <InputConfirmPass 
-          v-if="displayConfirmPassword"
-          @sendValue_ConfirmPass_CE="updateEdits_ConfirmPass"
-        /> -->
-      </form>
     </div>
   </div>
 </template>
 
 <script>
+import InputGroup from '../../components/reusable/admin/inputs/inputGroup.js';
 
 export default {
+  
+  components: {
+    ...InputGroup,
+  },
   data() {
     return {
       registrationData: {
@@ -53,6 +61,17 @@ export default {
         confirm: '',
         secret: '',
       }
+    }
+  },
+  methods: {
+    updateRegData_Name(name) {
+      this.registrationData.name = name;
+    },
+    updateRegData_Email(email) {
+      this.registrationData.name = email;
+    },
+    updateRegData_Username(username) {
+      this.registrationData.username = username;
     }
   }
 }

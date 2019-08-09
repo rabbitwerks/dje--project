@@ -33,7 +33,7 @@
               <label for="login-password">Password</label>
               <input
                 v-model="password"
-                type="text" 
+                type="password" 
                 id="login-password"
                 class="admin--input"
                 required

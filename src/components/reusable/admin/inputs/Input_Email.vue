@@ -28,7 +28,7 @@
 export default {
   props: {
     email: {
-      type: String,
+      type: String || null,
       required: true,
       default: ''
     },
